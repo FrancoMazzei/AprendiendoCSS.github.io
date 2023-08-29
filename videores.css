@@ -1,0 +1,43 @@
+body {
+    background: #000;
+}
+
+video {
+    width: 580px;
+    margin: 80px 380px;
+    border: solid 4px #9f5;
+}
+
+b {
+    font-size: 22px;
+    color: #9f5;
+    display: block;
+}
+
+b::first-letter {
+    font-size: 30px;
+    color: #9f5;
+}
+
+p {
+    display: inline;
+    color: #9f5;
+}
+
+a {
+    color: #0ff;
+}
+
+a:hover {
+    color: #2bf;
+}
+
+@media only screen and (max-width: 500px) {
+    .container video {
+        width: 350px;
+        border: solid 4px #9f5;
+        margin-left: 0;
+
+    }
+}
+ 

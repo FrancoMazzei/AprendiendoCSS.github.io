@@ -1,0 +1,1218 @@
+/* apply a natural box layout model to all elements, but allowing components to change.
+aplicar un modelo de diseño de caja natural a todos los elementos, pero permitiendo que los componentes cambien */
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+/*Formas llamar a una hoja CSS:
+Por linea de estilos en el documento HTML;
+Dentro de head como si fuera una hoja CSS;
+Llamando una hoja de estilos (CSS)*
+o con @import, pero esto se considera mala practica y NO se debe usar en CSS puro.
+Para llamar una hoja de estilos dentro de una hoja de estilos es mejor usar linkl*/
+
+/*estructura basica de CSS
+1) El selector, el elemento HTML que seleccionemos para darle estilo.
+2) El bloque de declaraciones, {los estilos que declaremos o pongamos a ese elemento HTML
+Cada elemento del bloque de declaraciones tendra una estructura.
+propiedad: valor; 
+y si fueran mas de dos palabras?
+propiedad-de-mas-de-dos-palabras: otro-valor;}
+
+Algunos selectores:
+*/
+
+
+/*Selector de tipo*/
+body{
+    width: 100vw;
+    padding-top: 20px;
+    
+}
+
+
+
+h1{
+    color: greenyellow;
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+/*Selector por ID:
+#title-principal {
+    color: black
+}*/
+/*Selector de clases*/
+
+.selector-2 {
+    color: orangered;
+    
+}
+
+.selector-universal * {
+    font-size: 20px;
+}
+
+/*Selector por hijos-directos*/
+
+.direct-children > li {
+    color: red;
+    background-color: yellow;
+}
+
+.pan > b {
+    color: brown;
+    background-color: aquamarine;
+}
+
+/*Selector por hijos-descendientes*/
+
+.descendants-children b{
+    color: white;
+    background-color: navy;
+}
+
+/*Selector por hermanos-generales*/
+.hermanos-generales ~ li {
+    background-color: salmon;
+}
+
+
+/*Selector por hermanos-adyacentes*/
+.hermanos-adyacentes + li {
+    background-color: salmon;
+}
+
+/*Selector por atributos:
+
+[atributo="personalizado" o atributo="normla"] {
+    color: gold;
+    background-color: black;
+}*/
+
+[atributob="b"] {
+    color: orange;
+}
+
+
+.selectores-atributos a[href] {
+    color: greenyellow;
+}
+
+
+.selectores-atributos a[target="_blank"] {
+    font-size: 22px;
+}
+
+/*se aplicara a los enlaces que solo contengan el nombre que se le desea dar estilo*/
+.selectores-atributos a[href*="espacial"] {
+    font-weight: bold;
+}
+
+/*se aplicara siempre y cuando comience con el nombre al cual le queres dar el estilo*/
+.selectores-atributos a[href^="http:"] {
+    color: orangered;
+}
+/*Solo aplica el estilo si tiene el nombre al final*/
+.selectores-atributos a[href$=".com"] {
+    text-decoration: none;
+}
+ /*Solo aplicara el estilo a los que esten separados por espacios*/
+.selectores-atributos a[class~="animales"] {
+      background-color: black;
+}
+/*se le aplicara a los que esten separados por espacios pero que despues de el texto contenga un - guion medio */
+.selectores-atributos a[class|="menu"]{
+    font-style: italic;
+}
+
+/*Selector universal*/
+* {
+    font-family: sans-serif;
+ }
+
+ /*(Los que pongo comentado son para que no cambie nada.)
+*/
+
+/** {margin:0px;padding:0px;}*/
+
+/*Selectores por pseudo-clases*/
+a:visited {
+    color: mediumvioletred;
+}
+
+a:link {
+    color: blue;
+}
+
+a:hover {
+    color: red;
+}
+
+.active input[type="button"]:active{
+    background: black;
+    color: white;
+}
+
+.pseudoclasel b:lang(en) {
+    color: aqua;
+    background: black;
+}
+
+.formulariopa :valid {
+    border-color: chartreuse;
+}
+
+.formulariopa :invalid {
+    border-color: red;
+}
+
+.formulariopa :focus {
+    background-color: lightsalmon
+}
+
+.formulariopa :disabled {
+    background-color: purple;
+}
+
+#aprendiendocss:target {
+    background-color: salmon;
+}
+
+.lista-pseudoclase li:first-child {
+    color: seagreen;
+}
+
+.lista-pseudoclase li:last-child {
+    color: red;
+}
+
+.lista-pseudoclase li:nth-child(4) {
+    color: maroon
+}
+
+.lista-pseudoclase li:nth-child(2n+1) {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.lista-pseudoclase li:nth-child(even) {
+    background-color: slateblue;
+}
+
+.lista-pseudoclase li:nth-child(odd) {
+    background-color: pink;
+}
+
+.art-pseudoclase p:first-of-type {
+    color: royalblue;
+}
+
+.art-pseudoclase p:last-of-type {
+    color: blue;
+}
+
+.art-pseudoclase p:nth-of-type(2) {
+    color: fuchsia;
+}
+
+.art-pseudoclase p:nth-of-type(3) {
+    color: fuchsia;
+}
+
+.art-pseudoclase *:not(p) {
+    color: orangered;
+}
+
+/*Pseudo elementos ::*/
+.libro::before {
+    content: "📚";
+}
+
+.libro::after {
+    content: "📈";
+}
+
+.libro-precio::before {
+    content: "$";
+    font-weight: bold;
+    color: green;
+}
+
+.libro-precio::after {
+    content: "ARS";
+    font-weight: bold;
+}
+
+.pseudo-elemento::first-letter {
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+}
+
+.pseudo-elemento::first-line {
+    color: salmon;
+}
+
+.pseudo-elemento::selection {
+    background-color: black;
+    color: greenyellow;
+}
+
+.placeholder::placeholder {
+    color: red
+}
+
+/*Por descendiente*/
+div h3 p {
+    color: gold;
+    background-color: black;
+}
+/*tambien se podria combinar con clases.*/
+
+.selec-descendientes p {
+    color: aqua;
+    background-color: black ;
+}
+
+/*Diferente manera de aplicar selectores*/
+.text-22 {
+    font-size: 22px;
+}
+
+.color-greenyellow {
+    color: greenyellow;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+/*Agrupar Selectores*/
+.form-agrupselect input[type="text"],
+.form-agrupselect input[type="submit"],
+.form-agrupselect textarea{
+    border-color: greenyellow;
+    background-color: black;
+    color: aqua;
+    border-width: 2px;
+    border-style: dashed;
+    font-size: 22px;
+    display: block;
+    width: 300px;
+}
+
+/*Algoritmo CSS/cascada/especifidad/herencia*/
+
+blockquote {
+    color: violet;
+    background-color: purple;
+}
+
+blockquote.frase-albert {
+    color: tomato;
+}
+
+.frase-albert {
+    color: black;
+    background-color: aquamarine;
+}
+
+.frase-albert {
+    color: black !important
+}
+
+#frase-albert {
+    color: black;
+    background-color: red;
+    font-size: 20px;
+}
+
+
+
+/*Ejemplos con los elementos del Word*/
+
+#i-css {
+    color: magenta;
+ }
+
+ .plj-css {
+    color: orangered;
+ }
+
+ [jerar="colores"] {
+    color: aqua;
+ }
+
+i {
+    color: blue;
+}
+
+i {
+    color: green !important;
+}
+
+/*Herencia*/
+
+.fm-n {
+    color: white;
+    background-color: fuchsia;
+    font-size: 20px;
+    border-color: black;
+    border-style: inset;
+}
+
+.fm-n cite {
+    color: white;
+    background-color: inherit;
+    font-size: initial;
+}
+
+/*Modelo de caja, colapso de margenes, visibility (colapso de margenes esta abajo al final, porque los otros hice ejemplos usandolos todos juntos)
+Y como pasar una etiqueta de bloque a una de linea*/
+
+[box="model"] {
+    color: red;
+    border: 2px;
+    border-style: solid;
+}
+
+.pinline {
+    display: inline;
+}
+
+.propiedad-box {
+    background-color: aquamarine;
+    padding: 20px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 0px red, 5px 5px 20px 0px red;
+}
+
+.propiedad-box2 {
+    background-color: aquamarine;
+    padding: 20px 10px 20px 10px;
+    margin: 0px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    box-shadow: -1px -1px 20px 2px red;
+}
+
+h4 {
+  font-size: 25px;
+  width: 250px;
+  max-height: 200px;
+  border: 4px solid magenta;
+}
+
+.pre-inline-block {
+    display: inline-block;
+    background-color: cadetblue;
+    width: 500px;
+    height: 199px;
+}
+
+[display="none"]{
+    display: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.box-sizing {
+    box-sizing: content-box;
+    background-color: khaki;
+    width: 500px;
+    height: 250px;
+    border: 5px solid red;
+  }
+
+.box-sizing-border {
+    box-sizing: border-box;
+    background-color: khaki;
+    width: 500px;
+    height: 250px;
+    border: 5px solid red;
+}
+
+.outline {
+   background-color: green;
+   width: 200px;
+   height: 200px;
+   margin: auto;
+}
+
+.outline:hover {
+    outline: black 6px solid;
+    border-radius: 250px;
+}
+
+/*colapso de margenes*/
+
+.colapsom{
+    width: 100px;
+    height: 100px;
+    border: solid 4px #f0f;
+    background: #000;
+    margin-bottom: 40px;
+}
+
+.colapsom2{
+    width: 100px;
+    height: 100px;
+    border: solid 4px #f0f;
+    background: #000;
+}
+/*El colapso solo sucede con margin top y bottom, con left y rigth no, como se muestra:*/
+ .C-{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: solid 4px #f0f;
+    background: #000;
+    margin-right: 20px;
+ }
+ .C-- {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: solid 4px #f0f;
+    background: #000;
+    margin-left: 20px;
+ }
+/*Metodologia BEM*/
+
+.contact-form__input {
+    color: greenyellow;
+    background-color: black;
+}
+
+.contact-form__input:first-child {
+    color: pink;
+}
+
+.contact-form__input--FI{
+    color: red;
+    background-color: yellow;
+}
+
+/*Teoría de medidas
+Ejemplo medidas fija y relativa*/
+.title-three {
+    font-size: 30px;
+}
+
+.title-three__3 {
+    font-size: 1.875em;
+}
+
+/*viewport heigth y width*/
+.htre {
+    color: black;
+    font-size: 16px;
+    background-color: greenyellow;
+    width: 50vw;
+    height: 30vh;
+}
+/*propiedades de texto*/
+.prop__d-t b {
+    background-color: aqua;
+
+}
+
+.prop__d-t .prop__d-t-b{
+    color: white;
+    background-color: red;
+
+}
+
+/*Ejemplo (algunos)*/
+.text-properties {
+    font-size: 29px;
+    font-family: monospace;
+    color: midnightblue;
+    text-align: center;
+    text-decoration: line-through;
+    text-shadow: 2px 2px 5px black;
+}
+
+/*Position, Relative y zindex*/
+
+.re1 {
+    width: 150px;
+    height: 150px;
+    font-size: 25px;
+    background: lightpink;
+}
+.re2 {
+    width: 150px;
+    height: 150px;
+    font-size: 25px;
+    background: yellow;
+    position: relative;
+    left: 150px;
+}
+.re3 {
+    width: 150px;
+    height: 150px;
+    font-size: 25px;
+    background: violet;
+}
+.re4 {
+    width: 150px;
+    height: 150px;
+    font-size: 25px;
+    background: orange;
+}
+
+/*Zindex*/
+
+.zin1 {
+    width: 150px;
+    height: 150px;
+    font-size: 25px;
+    background: lightpink;
+}
+.zin2 {
+    width: 150px;
+    height: 150px;
+    font-size: 25px;
+    background: yellow;
+    position: relative;
+    top: 60px;
+    left: 20px;
+    z-index: 50;
+}
+.zin3 {
+    width: 150px;
+    height: 150px;
+    font-size: 25px;
+    background: violet;
+    position: relative;
+    z-index: 100;
+
+}
+.zin4 {
+    width: 150px;
+    height: 150px;
+    font-size: 25px;
+    background: orange;
+}
+
+/*Conflicto padre e hijo con z-index*/
+
+.father {
+    width: 300px;
+    height: 300px;
+    background: blueviolet;
+    margin: 80px;
+    position: relative;
+}
+.children {
+   background: orangered;
+   width: 150px;
+   height: 150px;
+   position: relative;
+   top: -20px;
+   left: -20px;
+   z-index: -1;
+
+}
+
+/*Position absolute*/
+.box1{
+  width: 160px;
+  height: 160px;
+  background: yellow;
+  font-size: 25px;
+}
+.box2{
+  width: 160px;
+  height: 160px;
+  background: red;
+  font-size: 25px;
+  position: absolute;
+  opacity: .6;
+  left: 82px;
+}
+.box3{
+  width: 160px;
+  height: 160px;
+  background: goldenrod;
+  font-size: 25px; 
+} 
+
+/*cuadradito*/
+
+div div {
+    height: 100px;
+    width: 100px;
+    background: violet;
+    outline: gold solid 8px;
+    font-size: 25px;
+    font-weight: bold;
+    color: aqua;
+}
+.container {
+    background: red;
+    position: relative;
+    border: 5px solid black;
+    margin: 60px auto;
+    height: 450px;
+    width: 450px;
+}
+.Box1 {
+    position: absolute;
+    top: 0;
+  }
+  .Box2 {
+    position: absolute;
+    right: 0;
+  }
+  .Box3 {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+  }
+  .Box4 {
+      position: absolute;
+      right: 0;
+      bottom: 0
+  }
+  .Box5 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      right: 0;
+      margin: auto;
+  } 
+
+  /*Position fixed y sticky*/
+ .fixedtitle {
+    background-color: black;
+    color: greenyellow;
+    z-index: 200;
+    top: 0;
+    right: 0;
+    position: fixed;
+ }
+
+ /*Sticky*/
+ .stickyb {
+    bottom: 0px;
+    position: sticky; 
+ }
+
+ /*Display y overflow*/
+
+ .cubin {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: aquamarine;
+    border: solid blueviolet 4px;
+ }
+
+ .cubininline {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: aquamarine;
+    border: solid blueviolet 4px;
+    display: inline;
+
+ }
+
+ .cubininlineb {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: aquamarine;
+    border: solid blueviolet 4px;
+    display: inline-block;
+ }
+ /*overflow*/
+
+ .overflowp {
+    width: 200px;
+    height: 300px;
+    margin: auto;
+    border: 5px red solid;
+    background: black;
+    overflow-y: scroll;
+ }
+
+ .overflowp p {
+    color: greenyellow;
+ }
+
+ .al-ien {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    border: 5px black solid;
+    background: black;
+    border-radius: 120px;
+
+ }
+ .al-ien img {
+    top: 20px;
+    left: 20px;
+    position: relative;
+    border: 5px black solid;
+    border-radius: 120px;
+ }
+
+ /*Floeat*/
+
+ .floatcl {
+    width: 650px;
+    height: 420px;
+    margin: auto;
+    border: 2px red solid;
+    padding: 10px;
+    background: black;
+    color: greenyellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+ .floatcl::first-letter {
+    font-size: 25px;
+ }
+ .floatcl img {
+    width: 300px;
+    height: 290px;
+    float: left;
+    border: 1px black solid;
+    margin-right: 10px;
+ }
+ 
+ /*Object-fit y cursor*/
+
+.img-rickC {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    border: 4px solid fuchsia;
+}
+
+.img-rickCov {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border: 4px solid fuchsia;
+}
+
+.img-rickNone {
+    object-fit: none;
+    border: 4px solid fuchsia;
+}
+
+.img-rickScale {
+    width: 400px;
+    height: 300px;
+    object-fit: scale-down;
+    border: 4px solid fuchsia;
+}
+
+/*cursor*/
+
+.cursord {
+    width: 250px;
+    height: 300px;
+    margin: auto;
+    background: red;
+    cursor: pointer;
+}
+
+.cursord:active {
+     cursor: row-resize;
+}
+
+/*Colorización*/
+
+.coloriZa {
+    width: 250px;
+    height: 300px;
+    margin: auto;
+    border: 4px solid #000;
+    background: #000;
+    position: relative;
+}
+
+div [colori="zado"] {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+}
+
+[colori="zado"] {
+    outline: none;
+    border: 4px solid #000;
+    /*background: rgb(160,0,255);*/
+    background: #050;
+    /*background: rgba(0,0,255, .4);*/
+}
+
+.colorization {
+    font-size: 20px;
+    font-weight: bold;
+    border: solid red;
+    background: lightblue;
+    color: navy;
+}
+.colorization2{
+    font-size: 20px;
+    font-weight: bold;
+    border: solid;
+    border: solid #f55;
+    background: #012;
+    color: #0f1;
+
+}
+.colorization3{
+    font-size: 20px;
+    font-weight: bold;
+    border: solid;
+    border: solid rgb(2, 250, 250);
+    background: rgb(150, 250, 150);
+    color: rgb(150, 0, 255);
+}
+.colorization4{
+    font-size: 20px;
+    font-weight: bold;
+    border: solid;
+    border: solid rgba(65, 20, 198, 1);
+    background:  rgba(23, 250, 12, .4);
+    color: rgba(150, 0, 0, 1)
+}
+
+/*ventana modal*/
+.window-modal {
+    background-color: #fab;
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: .5;
+    display: none;
+}
+
+.window-modal:target {
+    display: block;
+}
+
+/*Transición*/
+.container-T {
+    height: 300px;
+    background: #00f;
+    padding: 20px;
+}
+.caja-T {
+    background: #f00;
+    width: 150px;
+    height: 150px;
+    outline: none;
+    transition-property: background;
+    transition-duration: 1s;
+    transition-delay: 1s;
+}
+.caja-T:hover {
+    background: #f08;
+}
+
+
+
+.container-T1 {
+    height: 500px;
+    background: #00f;
+    padding: 20px;
+    display: flex;
+    
+}
+.caja-T1 {
+    background: #f00;
+    outline: none;
+    height: 150px;
+    width: 150px;
+    margin: 40px;
+    transition-property: top background color;
+    transition-duration: 1s;
+    transition-delay: 1s;
+    position: relative;
+    top: 0; 
+}
+
+.container-T1:hover > .caja-T1 {
+   top: 60%;
+   background: #fff;
+   color: #000;
+}
+.caja-T1:nth-child(1) {
+    transition-timing-function: linear;
+    transition-duration: 2s;
+}
+.caja-T1:nth-child(2) {
+    transition-timing-function: ease;
+}
+.caja-T1:nth-child(3) {
+    transition-timing-function: ease-in;
+
+}
+.caja-T1:nth-child(4) {
+    transition-timing-function: ease-out;
+}
+.caja-T1:nth-child(5) {
+    transition-timing-function: ease-in-out;
+}
+
+
+/*Animations*/
+.Container-A {
+    background: #008;
+    height: 30vh;
+    padding: 40px 20px;
+}
+
+.Caja-A {  
+    background: #f00;
+    outline: none;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    animation-name: desplazarse;
+    animation-duration: 2s;
+    animation-timing-function: linear; /*los mismos valores que el anterior*/
+    animation-iteration-count: infinite;/*cuantas veces debe repetirse la animacion, se puede poner una cantidad o infinito*/
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+    /* animation-timing-function:cubic-bezier(0, 0.73, 0.58, 1); */
+}
+
+@keyframes desplazarse { /*primer formar*/
+    from {
+        position: relative;/*postion relative es lo predeterminado, esto no deberia ponerse aca ya que puede presentar errores de*/
+        left: 0;
+    }
+    to {
+        left: 150%;
+    }
+
+    0% { 
+      position: relative;
+      left: 0;
+      background: #f00;
+    }
+    20% {
+        background: #f0f;
+        border-radius: 20%;
+    }
+    50% {
+        background: #ff0;
+        border-radius: 30%;
+    }
+    100% {
+        left: 90%;
+        background: #0f1;
+        border-radius: 50%;
+
+    }
+}
+
+/*Transform*/
+.Container-transform {
+    background: #000;
+    height: 30vh;
+    padding: 40px 20px;
+}
+.Caja-transform {
+    outline: none;
+    width: 100px;
+    height: 100px;
+    background: rgb(100, 6, 69);
+    margin: auto;
+    /*transform: translate(80%);
+    transform: translateX(90px);
+    transform: translateY(90px);
+    transform: translate(150px, 100%);*/
+
+    /* transform: scale(2);
+    transform: scaleX(-.5);
+    transform: scaleY(1.6); */
+
+    /* transform: rotate(64deg);
+    transform: rotateX(100deg);
+    transform: rotateY(100deg); */
+
+    /* transition:  transform 1s; */
+    animation-name: triangulo;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+       
+}
+
+ /* .Caja-transform:hover {
+    transform: skew(30deg);
+    transform: skewX(45deg); 
+    transform: skewY(45deg);    
+}
+h5 {
+    transform: skew(-30deg);   
+}  */
+
+
+@keyframes triangulo {
+    0% {
+        width: 100px;
+        height: 100px;
+    }
+    20% {
+        clip-path: polygon(7% 0, 92% 0, 100% 100%, 0 100%);
+        background: #050;
+    }
+
+    25% {
+        clip-path: polygon(16% 0, 80% 0, 100% 100%, 0 100%);
+        background: #0f1;
+    }
+
+    50% {
+        clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
+        background: #00f;
+    }
+
+    75% {
+        clip-path: polygon(41% 0, 63% 0, 100% 100%, 0 100%);
+        background: #008;
+    }
+
+    100% {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        background: #f08;
+    }
+}
+
+/*Variables*/
+h5 {
+    --color-bg: #f65;
+}
+:root {
+    --color-green: #0f0;
+    --color-violet: #80f;
+}
+.Container-var {
+    width: 200px;
+    height: 200px;
+    margin: 25px;
+    border: solid #000;
+    background: var(--color-green);
+}
+
+.Container-var2 {
+    width: 200px;
+    height: 200px;
+    margin: 25px;
+    border: solid #000;
+    background: var(--color-violet);
+}
+h5 {
+    background: var(--color-bg);
+    background: var(--color-green);/*a traves de root funciona para todos los elementos*/
+}
+
+
+/*Filtros*/
+.filter {
+   margin-left: 30vw;
+   filter: none;
+   filter: blur(5pt);
+   filter: brightness(.5);
+   filter: contrast(100%);
+   filter: grayscale(50%);
+   filter: hue-rotate(66deg);
+   filter: invert(90%);
+   filter: opacity(65%);
+   filter: saturate(15%);
+   filter: sepia(100%);
+   
+}
+
+.filter-shadow {
+    width: 200px;
+    height: 200px;
+    /* box-shadow: 16px 16px 16px #000; */
+    filter: drop-shadow(16px 20px 10px #050);
+    filter: drop-shadow(3px 3px 2px #000);   
+}
+
+/*Practica filter*/
+.containerpraci {
+    filter: contrast(20);
+    background-color: #fff;
+}
+
+.pracfilter {
+    display: inline-block;
+    margin: 50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgb(255, 0, 0);
+    outline: none;
+    filter: blur(20px);
+    
+}
+.uno {
+    animation: trasladar 1.2s alternate infinite;
+}
+
+@keyframes trasladar {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(120px);       
+    }
+}
+
+
+/*Direction*/
+.direc {
+    width: 400px;
+    background: rgb(64, 50, 255, .5);
+    font-size: 20px;
+    direction: ltr;
+}
+/*Letter-spacing y User-selected*/
+.letterSp {
+    width: 300px;
+    padding: 10px;
+    border: #000 solid;
+    margin: auto;
+    background: #48f;
+    font-size: 30px;
+    letter-spacing: 10px;
+    user-select: none;
+}
+
+

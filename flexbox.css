@@ -1,0 +1,318 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    }
+
+  body{
+    width: calc (100vw - 1rem);
+    padding-top: 20px;
+    background: #000;
+}
+
+h1 {
+  color: #f50;
+}
+p {
+  color: #f50;
+  font-size: 20px;
+}
+
+a {
+  color: #fff;
+}
+a:hover {
+  color: #0f0;
+}
+
+/*display flex*/
+.containerflex {
+    display: flex;
+    
+}
+
+.itemflex {
+    background: #486;
+    color: #fff;
+    margin: 5px;
+    padding: 10px;
+
+}
+/*Para que se vea que se puede volver inline tambien*/
+.inlineflex {
+  width: 80px;
+  height: 80px;
+  border: solid 4px #684;
+  display: inline-flex;
+} 
+
+/*flex-direction*/
+
+.containerflD {
+  display: flex;
+  /*flex-direction: row;*/
+  /*flex-direction: row-reverse;*/
+  /*flex-direction: column;*/
+  /*flex-direction: column-reverse;*/
+  /*flex-wrap: nowrap;*/
+  /*flex-wrap: wrap;*/
+  /*flex-wrap: wrap-reverse;*/
+  flex-flow: row wrap;
+}
+.flexdirection {
+  width: 100px;
+  height: 100px;
+  border: solid 2px #f54;
+  background: #005;
+  color: #fff;
+  margin: 5px;
+}
+
+/*justify-content*//*los primeros 6 son los mas communes, desde "justify-content:start; son los menos comunes"*/
+
+.containerfA {
+  display: flex;
+  flex-flow: row wrap;
+  /*justify-content: flex-start;*/
+  justify-content: flex-end;
+  /*justify-content: center;*/
+  /*justify-content: space-between;*/
+  /*justify-content: space-evenly;*/
+  /*justify-content: space-around;*/
+
+  /*justify-content: start;*/
+  /*justify-content: end;*/
+  /*justify-content: left;*/
+  /*justify-content: right;*/
+}
+.flexalign {
+  width: 100px;
+  height: 100px;
+  border: solid 2px #f54;
+  background: #005;
+  color: #fff;
+  margin: 5px;
+}
+
+
+/*align items y content*/
+.containerfA-I {
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: space-evenly;
+ height: 50vh;
+ /*align-items: stretch;*/
+ /*align-items: flex-start;*/
+ /*align-items: flex-end;*/
+ /*align-items: center;*/
+ align-items: baseline;
+
+}
+/*este tiene que ver con baseline*/
+.flexaligni:nth-child(3) {
+  font-size: 200%;
+}
+
+.flexaligni {
+  min-width: 100px;
+  min-height: 100px;
+  border: solid 2px #f54;
+  background: #005;
+  color: #fff;
+  margin: 5px;
+}
+
+/*content*/
+.containerfA-C {
+  display: flex;
+  height: 80vh;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /*align-content: normal;*/
+  /*align-content: flex-start;*/
+  /*align-content: flex-end;*/
+  align-content: center;
+  /*align-content: space-between;*/
+  /*align-content: space-evenly;*/
+  /*align-content: space-around;*/
+}
+.flexalignc {
+  width: 100px;
+  height: 100px;
+  border: solid 2px #f54;
+  background: #005;
+  color: #fff;
+  margin: 5px;
+}
+
+/*Propiedades de los items*/
+.containerItem-flex {
+  display: flex;
+  height: 100vh;
+  flex-flow: row wrap;
+  color: #fff;
+  font-weight: bold;
+  flex-direction: column;
+}
+
+.violet {
+  min-width: 100px;
+  min-height: 100px;
+  border: solid 2px #f54;
+  background: violet;
+  align-self: center;
+  /*align-self: stretch;*/
+  /*align-self: flex-end;*/
+  /*align-self: flex-start;*/
+  /*align-self: baseline;*/
+} 
+/*.violet:nth-child(1) { /tiene que ver con baseline de .violet/
+  font-size: 50px; 
+}*/
+
+.green {
+  width: 100px;
+  height: 100px;
+  border: solid 2px #f54;
+  background: green;
+} 
+.red {
+  width: 100px;
+  height: 100px;
+  border: solid 2px #f54;
+  background: red;
+} 
+.blue {
+  width: 100px;
+  height: 100px;
+  border: solid 2px #f54;
+  background: blue;
+}
+
+
+/*flex-grow*/
+
+.containertItem-flex-grow{
+  display: flex;
+  flex-flow: row wrap;
+  background: #fff;
+  min-height: 200px;
+  width: auto;
+}
+
+.itemflex-grow {
+  width: 100px;
+  height: 100px;
+  background: #0f0;
+  border: solid 2px #f54;
+  font-size: 20px;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+/*.itemflex-grow2 {
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #005;
+  flex-grow: 2;
+}*/
+
+/*Para que se vea que se puede estirar este elemento tambien, aunque me costo un poquito pero fue bueno jaja. El de arriba lo dejo para ver los cambios.*/
+.containertItem-flex-grow .itemflex-grow2:nth-child(2) {
+  display: flex;
+  flex-direction: row wrap;
+  flex-grow: 2;
+  width: 100px;
+  /*min-height: 100px;*/ /*podria dejarlo solo con esto y no seria necesario aplicar un align self, ya que se esiraria igual, pero para usar la propiedad lo comento*/
+  font-size: 20px;
+  font-weight: bold;
+  background: #0f0;
+  border: solid 2px #f54; 
+  align-self: stretch;
+}
+
+.itemflex-grow {
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+/*flex-shrink*/
+
+.container-flexSh {
+  display: flex;
+  flex-flow: row wrap;
+  background: #fff;
+  min-height: 200px;
+  max-width: 600px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.itemflex-shrink {
+  width:  100px;
+  height: 100px;
+  border: solid 2px #f54;
+  background: #005;
+  margin: 5px;
+  
+}
+/*.uno {
+  flex-basis: 200px;
+  flex-shrink: 2;
+} */
+
+/*Order*/
+.flex-order {
+  display: flex;
+  /*flex-flow: row-reverse wrap;*/
+  flex-flow: column-reverse;
+  min-height: 200px;
+  max-width: 600px;
+  justify-content: center;
+  margin: 0 auto;
+}
+.order {
+  width: 100px;
+  height: 100px;
+  align-self: center;
+  background: #005;
+  border: solid 2px #f54;
+  color: #fff;
+}
+.Ou {
+  align-self: flex-end;
+  order: 5;
+}
+.Ot {
+  align-self: flex-start;
+  order: 4;
+}
+.Oc {
+  align-self: flex-end;
+}
+.Od {
+  align-self: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

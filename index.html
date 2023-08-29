@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo CSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <!--<link rel="stylesheet" href="CSS/reset.css">-->
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    
+<article id="aprendiendocss">
+     <h1>Aprendiendo CSS</h1>
+    <p><i>Cascading style sheets</i> o hojas de cascada en estilo en español. </p> 
+    <h2>Temario</h2>
+    <ul>
+        <li><a href="index.html#selectores">Selectores</a>
+        <ul>
+            <li><a  href="index.html#selectores-t-id-c">De tipo, id y clases</a></li>
+            <li><a href="index.html#selectores-hijos-dd">Hijos directos y descendientess</a></li>
+            <li><a href="index.html#selectores-hermanos-g-d">Hermanos generales y adyacentes</a></li>
+            <li><a href="index.html#selector-atributo-universal">Por atributo y universal</a></li>
+            <li><a href="index.html#selecotr-pseudoclases">Pseudo clases</a></li>
+            <li><a href="index.html#pseudoelementos">Pseudo elementos</a></li>
+            <li><a href="index.html#descendientes">Selector por descendientes</a></li>
+            <li><a href="index.html#formad">Diferente forma de aplicar selectores</a></li>
+            <li><a href="index.html#agrupar-selectores">Agrupar Selectores</a></li>
+        </ul>
+        <li><a href="index.html#algocss-c-e-h">Algoritmo CSS/cascada/especidad/herencia</a></li>
+        <li><a href="index.html#reset-normali">Reseteo y Normalizacion</a></li>
+        <li><a href="index.html#pn">Prefijos de navegadores</a></li>
+        <li><a href="index.html#boxmodel">Modelo de caja / colapso de margenes / visibility</a></li>
+        <li><a href="index.html#mbem">Metodología BEM</a></li>
+        <li><a href="index.html#tdu">Teoria de unidades</a></li>
+        <li><a href="index.html#prpt-css">Propiedades de texto CSS y como aplicar tipografias externas</a></li>
+        <li><a href="index.html#Position-relative">Position relative y Zindex</a></li>
+        <li><a href="index.html#Pabsolute">Position absolute</a></li>
+        <li><a href="index.html#fixcky">Position fixed y stycky</a></li>
+        <li><a href="index.html#do">Display y overflow</a></li>
+        <li><a href="index.html#Float">Float</a></li>
+        <li><a href="index.html#ofc">Object-fit y cursor</a></li>
+        <li><a href="index.html#coloriz">Colorización</a></li>
+        <li><a href="index.html#responsive">Responsive y mobile first</a></li>
+        <li><a href="index.html#venmf">Ventana modal con fixed</a></li>
+        <li><a href="index.html#flbox">Flexbox</a></li>
+        <li><a href="index.html#grid">Grid</a></li>
+        <li><a href="index.html#transition">Transition</a></li>
+        <li><a href="index.html#ani">Animaciones</a></li>
+        <li><a href="index.html#transform">Transform</a></li>
+        <li><a href="index.html#variables">Variables</a></li>
+        <li><a href="index.html#filtros">Filtros</a></li>
+        <li><a href="index.html#Dirc">Direction</a></li>
+        <li><a href="index.html#letterS">Latter Spacing y User selected</a></li>
+        <li><a href="index.html#"></a></li>
+    </ul>
+</article>
+
+<article id="selectores">
+    <h2 id="selectores-t-id-c" class="selector-2">Algunos Selectores</h2>
+    <p><b class="selector-2">Selector de tipo</b></p>
+        <pre>
+            i {
+                los estilos que querramos aplicar
+            }
+        </pre>
+
+    <p><mark>" i "</mark>este es un seleccionador de tipo, y se usa para seleccionar una etiqueta o varias etiquetas de HTML, 
+    en este caso, todas las etiquetas i (letra italica), seleccionaria todas las i que haya en el documento.</p>
+     <br>
+
+     <p><b class="selector-2">Selector de id</b></p>
+        <pre>
+                &lt;h2 id="titulo-secundario"&gt; Titulo secundario &lt;/h2&gt;
+    
+        </pre>
+        <p><b>En css:</b></p>
+        <pre>
+            #titulo-secundario {
+                los estilos que querramos aplicar
+            }
+        </pre>
+
+    <p><mark>" # "</mark> el hashtag se usa para el id,es para darle un identificador unico, no se puede repitir, solo en un elemento HTML.</p>
+    <br>
+    <p><b class="selector-2">Selector de clases.</b><br>En HTML:</p>
+        <pre>
+            &lt;h1 class="titulo"&gt; Titutlo &lt;/h1&gt;
+
+        </pre>
+        <pre>
+            .titulo {
+                los estilos que querramos aplicar
+            }
+        </pre>
+
+    <p><mark>" . "</mark>clases (class) se usa para definnir el estilo de muchos elementos HTML, esto hace que quede todo 
+    ordenado y con menos errores de especifidad.</p>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="selectores-hijos-dd">
+    <h2 class="selector-2">Selector de hijos-directos y de hijos-descendientes</h2><br>
+    Hijos-directos, ejemplo HTML con lista</p>
+        <pre>
+            &lt;ul class="direct-children">
+               &lt;li&gt;&lt;b>medialuna&lt;/b&gt;&lt;/li&gt;
+               &lt;li&gt;&lt;b>vigilante&lt;/b&gt;&lt;/li&gt;
+               &lt;li&gt;&lt;b>churros&lt;/b&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+
+    <p>En css</p>
+        <pre>
+            .direct-children > li {
+                color: red;
+                background-color: yellow;
+            }
+            
+        </pre>
+
+        <ul class="direct-children">
+               <li><b>medialuna</b></l>;
+               <li><b>vigilante</b></li>
+               <li><b>churros</b></li>
+            </ul>
+
+    <p><mark>" > "</mark>el simbolo "mayor que" se debe poner en css para indicar que seran los hijos directos que esten primero,
+    los que seleccionara para darle estilo. Aca seria los "li" y esos tendrian en el estilo.<br>Otro ejemplo con div:</p>
+        <pre>
+            &lt;div class="pan"&gt;
+                &lt;b&gt;pan dulce&lt;/b&gt;&lt;br&gt;
+                &lt;b&gt;pan salado&lt;/b&gt;&lt;br&gt;
+                &lt;p&gt;&lt;b&gt;pan frito&lt;/b&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        </pre>
+
+        <div class="pan">
+            <b>Pan dulce</b><br>
+            <b>Pan salado</b><br>
+            <p><b>Pan frito</b></p>
+        </div>
+
+    <p>En este caso, tomaria primero a todos lo b pero no a los b que esten dentro de otra etiqueta, ya que no es parte de los hijos directos.</p>
+    <br>
+
+    <p>Hijos-descendientes, ejemplo HTML:<br>(esta forma de hacer la lista es incorrecta, no esta bien poner una b dentro de un p,
+        solo es a modo de ejemplo.)</p>
+        <pre>
+            &lt;ul class="descendants-children">
+                &lt;li&gt;&lt;b&gt;medialuna&lt;/&gt;>&lt;/li&gt;
+                &lt;li&gt;&lt;b&gt;vigilante&lt;/b&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;p&gt;&lt;b&gt;churros&lt;/b&gt;&lt;/p&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+
+    <p>en css:</p>
+        <pre>
+            .descendants-children b{
+                color: white;
+                background-color: navy;
+            }
+            </pre>
+
+    <p><mark>(el espacio en blanco)</mark> se deja como diciendo, aca no importa quien es el primero, debes seleccionar a todos los b sin importar quien este primero.<br>
+    Asi se ve:</p>
+
+    <ul class="descendants-children">
+        <li><b>medialuna</b;>&lt;/li>
+        <li><b>vigilante</b>;&lt;/li>
+        <li><p>&lt;b&gt;churros</b></p></li>
+   </ul>
+
+
+
+
+
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="selectores-hermanos-g-d">
+    <h2 class="selector-2">Selector de hermanos (en generales) y selector de hermanos (adyacente)</h2><br>
+        selector de hermanos en generales, ejemplo HTML:</p>
+        <br>
+        <pre>
+                &lt;ul&gt;
+                &lt;li&gt;&lt;b&gt;medialuna&lt;/b&gt;&lt;/li&gt;
+                &lt;li class="hermanos-generales"&gt;&lt;b&gt;vigilante&lt;/b&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;b&gt;churros&lt;/b&gt;&lt;/li&gt;                                                                                                                                                                         
+                &lt;li&gt;&lt;b&gt;alfajor&lt;/b&gt;
+                &lt;/ul&gt;
+        </pre>
+        
+        <p>CSS:</p>
+        <pre>
+            .hermanos-generales ~ li {
+                background-color: salmon;
+            }
+        </pre>
+    
+        <ul>
+            <li><b>medialuna</b></li>
+            <li class="hermanos-generales"><b>vigilante</b></li>
+            <li><b>churros</b></li>                                                                                                                                                                         
+            <li><b>alfajor</b>
+          </ul>
+    
+        <p>Selector de hermanos adyacentes, Ejemplo HTML:</p>
+        <pre>
+              &lt;ul&gt;
+                &lt;li&gt;&lt;b&gt;medialuna&lt;/b&gt;&lt;/li&gt;
+                &lt;li class="hermanos-adyacentes"&gt;&lt;b&gt;vigilante&lt;/b&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;b&gt;churros&lt;/b&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;b&gt;alfajor&lt;/b&gt;
+              &lt;/ul&gt;
+        </pre>
+          
+          <p>CSS:</p>
+          <pre>
+            .hermanos-adyacentes + li {
+                background-color: salmon;
+            }
+          </pre>
+    
+          <ul>
+            <li><b>medialuna</b></li>
+            <li class="hermanos-adyacentes"><b>vigilante</b></li>
+            <li><b>churros</b></li>
+            <li><b>alfajor</b>
+          </ul>
+          <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="selector-atributo-universal">         
+     <h2 class="selector-2">Selector por atributo.</h2><p>En HTML(por ejemplo):</p>
+        <pre>
+            &lt;h2 atributopersonalizado="otro-subtitulo"&gt;Otro Subtitulo&lt;/h2&gt;&lt;br&gt;
+            &lt;h3 href="https://enlace-imaginario"&gt;Enlace Imaginario&lt;/h3&gt;&lt;br&gt;
+        </pre>
+
+    <p>En CSS:</p>
+        <pre>
+            [atributopersonalizado="otro-subtitulo"] {
+                los estilos que querramos aplicar
+            }
+            <br>
+            [href="enlacei-maginario"] {
+                estilos
+            }
+        </pre>
+
+    <p><mark>" [] "</mark>esto se debe usar para los atributos personalizados o no.<br>Los selectores de atributos tienen bastante potencial,
+    muchas variantes, como:</p>
+    <pre>
+        .selector-atributos a[href] {
+            estilos
+        }
+    </pre>
+    <p>Combinandolo con un selector de hijos-descendientes (que esta escrito con clase pero se puede escribir con cualquier selector que se quiera) de atributo. 
+        Decimos que solo le aplique los estilos a los elementos que contengan un href en esa clase.</p>
+        
+    <pre>
+        .selectores-atributos a[target="_blank"] {
+            font-size: 22px;
+        }
+    </pre>
+    <p>No siempre deben estar solo los atributos, a veces para mayor especificacion se pone el atributo, junto al valor que tenga.</p>
+
+    <pre>
+        .selectores-atributos a[href*="espacial"] {
+            font-weight: bold;
+        }
+    </pre>
+    <p><mark>*</mark> se usa para indicar para que solo se le agregue el estilo a los atributos que contengan la palabra puesta, en este caso "especial."</p>
+
+    <pre>
+        .selectores-atributos a[href^="http:"] {
+            color: orangered;
+        }
+    </pre>
+    <p><mark>^</mark> se usa para indicar que solo le debe dar estilo a los atributos que comiencen con "http"</p>
+
+    <pre>
+        .selectores-atributos a[href$=".com"] {
+            text-decoration: none;
+        }
+    </pre>
+    <p><mark>$</mark> al contrario del anterior, este simbolo se usa para especificar que solo se le aplique el estilo a los atributos que terminen con ".com." <br>
+    Para el que sigue, es con un ejemplo en HTML:</p>
+    <pre>
+        &lt;li&gt;&lt;a class="menu-item animales" href="https://marmotaespacial" target="_blank">Marmota4&lt;/a&gt;&lt;/li&gt;
+    </pre>
+    <b>En css:</b>
+
+    <pre>
+        .selectores-atributos a[class~="animales"] {
+            background-color: black;
+      }
+    </pre>
+    <p><mark>~</mark> la virguililla se usa para decir que se pongan los estilos a la clase que contiene el texto indicado y que este separado por espacios. 
+    Y obviamente no se tendria que poner a href, si no class, por que en HTML class es un atributo.</p>
+
+    <pre>
+        .selectores-atributos a[class|="menu"]{
+            font-style: italic;
+        }
+    </pre>
+    <p><mark>|</mark> siguiendo con el ejemplo anterior, este simbolo sirve para decir que los estilos se deben aplicar a la clase que contenga el texto indicado pero
+    que este este despues este separado por un guion medio ( - ).<br> Ejemplo HTML y como se veria:</p>
+    
+    <pre>
+        &lt;nav class="selectores-atributos"&gt;
+            &lt;ul&gt;
+
+                    &lt;li&gt;&lt;a href="http://marmota-espacial" target="_blank">Marmota1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="https://marmotaespacial.com" target="_blank">Marmota2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="https://marmotaespacial.com" target="_blank">Marmota3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a class="menu-item animales" href="https://marmotaespacial" target="_blank">Marmota4&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="https://marmotaespacial" target="_blank">Marmota5&lt;/a&gt;&lt;/li&gt;
+
+            &lt;/ul&gt;
+         &lt;/nav&gt;
+
+    </pre>
+
+    <nav class="selectores-atributos">
+        <ul>
+                <li><a href="http://marmota-espacial" target="_blank">Marmota1</a></li>
+                <li><a href="https://marmotaespacial.com" target="_blank">Marmota2</a></li>
+                <li><a href="https://marmotaespacial.com" target="_blank">Marmota3</a></li>
+                <li><a class="menu-item animales" href="https://marmotaespacial" target="_blank">Marmota4</a></li>
+                <li><a href="https://marmotaespacial" target="_blank">Marmota5</a></li>
+        </ul>
+    </nav>
+
+    <br>
+    <b class="selector-2">Selector Universal</b><br>
+    <pre>
+        * {
+            los estilos que se desean aplicar
+        }
+    </pre>
+    <p><mark>*</mark> Este selector, selecciona absolutamente TODOS los elementos del documento HTML. Pero no significa que sea poco usado, si no todo lo 
+    contrario, puede llegar a ser muy util. como para cambiar toda la tipogfrafia del documento, es decir el estilo de la escritura. <br>
+    Ejemplo:</p>
+
+    <pre>
+        * {
+            font-family: sans-serif;
+         }
+    </pre>
+    <p>Como dije muchas veces jaja, se puede combinar con otros selectores.</p>
+    <pre>
+        .selector-u * {
+            font-size: 20px;
+        }
+    </pre>
+    <p>En este caso usamos un selector class con el selector universal en un elemento HTML para agrandar el tamaño de la letra 20px.<br>Ejemplo:</p>
+    <div class="selector-universal">
+        <p><b>Hola, mucho gusto</b></p>
+    </div>
+    <b>En HTML:</b>
+    <pre>
+         &lt;div class="selector-universal"&gt;
+             &lt;p&gt; &lt;b&gt;Hola, mucho gusto &lt;/b&gt; &lt;/p&gt;
+         &lt;/div&gt;
+    </pre>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="selecotr-pseudoclases">
+    <h2 class="selector-2">Selector por pseudoclases.</h2><p>En CSS:</p>
+        <pre>
+            a:visited {
+                color: mediumvioletred;
+            }
+        </pre>
+    <p><mark>:visited</mark> se usa mas que nada para los enlaces, cuando el usuario lo toque quede ya marcado para las proximas veces que lo vea de un determinado
+    color.</p>
+
+        <pre>
+           a:hover {
+            Los estilos que se quieran aplicar
+           }
+        </pre>
+
+    <p><mark>:link</mark> se usa apra darle estilos a los enlaces que aun no fueron seleccionados.</p>   
+       <pre>
+           a:link {
+               color: blue;
+           }
+       </pre>   
+
+    <p><mark>" :hover ",</mark> se usa para que cuando pasemos el mouse o cursor por encima de un elemento este se marque del estilo que hayamos puesto antes.<br>
+    :hover aplica para todos los elementos, no es unico de los enlaces, podriamos hacer que algo aumente de tamaño al poner el cursor, entre otros.</p><br>
+
+    <p><mark>:active</mark> se usa para cuando estamos seleccionando un elemento o tocandolo, que este cambie de estilo unicamente cuando se lo activa (selecciona).<br>
+    Ejemplo:</p>
+    
+    <form class="active">
+        <input type="button" name="boton" value="Boton">
+    </form>
+
+    <pre>
+        .active input[type="button"]:active{
+            background: yellow;
+        }
+    </pre>
+    <b>Importante: se pueden usar varios selectores libremente para llegar al estilo deseado, se puede combinar sin problemas selectores de clase.<br>
+    En este caso hay un selector de clase, de tipo y de atributo.</b><br>
+
+    <p><mark>:lang</mark>se utiliza paramodificar estilos dependiendo del valor del atributo lang, que especifica el idioma 
+        en el que estan escritos esos elementos, porque cada idioma, tiene su codigo. <br>Ejemplo:</p>
+
+    <div class="pseudoclasel">
+        <b lang="en"> Hello my name is Plutonium and I am from the small planet Pluto.</b><b lang="es">Hola mi nombre es Plutonio y soy del pequeño planeta Plutón.</b>
+    </div>
+    <pre>
+        .pseudoclasel b:lang(en) {
+            color: aqua;
+            background: black;
+        }
+    </pre>
+    <br>
+
+    <pre>
+        .formulariopa :valid {
+            border-color: chartreuse;
+        }
+    </pre>
+    <p><mark>:valid</mark>esta pseudo-clase sirve para poner un color en el borde de un formulario por ejemplo, y asi de esta forma se le marque al usuario si le
+    falta poner algo o no puso la informacion correcta. Se marcara el borde de un estilo para afirmar que sea correcto, como verde. </p>
+
+    <pre>
+        .formulariopa :invalid {
+            border-color: red;
+        }
+    </pre>
+    <p><mark>:invalid</mark> lo contrario a :valid, aca se marcara de un determinado color, generalmente rojo para indicarle al usuario que la informacion es 
+    incorrecta o esta incompleta.</p>
+
+    <pre>
+        .formulariopa :focus {
+            background-color: lightsalmon
+        }
+    </pre>
+    <p><mark>:focus</mark> como lo dice el nombre, es para hacer foco, por ejemplo cuando estamos llenando un formulario y al tocar dentro de la caja de texto, 
+    se ilumina de un color determinado para decirnos que estamos haciendo foco en ese elemento.</p>
+
+    <pre>
+        .formulariopa :disabled {
+            background-color: purple;
+        }
+    </pre>
+
+    <p><mark>:disabled</mark> se usa para deshabilitar una parte de la pagina, puede ser un boton, caja de texto para poder dejar un comentario establecido, etc.<br>
+    Ejemplo usando ":valid", ":invalid", ":focus" y ":disabled"</p>
+
+    <form class="formulariopa">
+        <input type="text" name="Nombre" placeholder="Pone tu nombre vite" required><br>
+        <input type="email" name="Email" placeholder="Pone tu email vite" pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$" required disabled><br>
+        <input type="password" name="Contraseña" placeholder="Pone tu contraseña vite" required><br>
+        <input type="submit" name="Enviar">
+    </form>
+    <br>
+    <pre>
+        #aprendiendocss:target {
+            background-color: salmon;
+        }
+    </pre>
+
+    <p><mark>:target</mark> este debe ir pegado al id o class, no como los anteriores que estaban separados. Pero bueno, :target sSirve para aplicar un estilo a un 
+        elemento cuando se selecciona mediante un id especifico en la URL del navegador, osea cuando se busca manualmente por la URL del navegador.</p>
+    <b atributob="b">Pseudo clase por posicion y tipo</b>
+
+    <pre>
+        .lista-pseudoclase li:first-child {
+            color: seagreen;
+        }
+    </pre>
+    <p><mark>:first-child</mark> es para darle estilo al primer hijo de la etiqueta padre o contenedora.</p>
+
+    <pre>
+        .lista-pseudoclase li:last-child {
+            color: red;
+        }
+    </pre>
+    <p><mark>:last-child</mark> lo contrario al anterior, selecciona al ultimo hijo.</p>
+
+    <pre>
+        .lista-pseudoclase li:nth-child(4) {
+            color: maroon
+        }
+    </pre>
+    <p><mark>:nth-child()</mark> sirve para seleccionar elementos en funcion del o los argumentos que se pongan entre parentesis, por ejemplo 4 y marcara al 4to 
+        elemento de una lista.<br> Otros ejemplos con nth:</p>
+    
+    <pre>
+        .lista-pseudoclase li:nth-child(2n) {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+    </pre>
+    <p><mark>(2n)</mark>poner un numero como 2 y la "n" hara que se pongan estilos de dos en dos</p>
+
+    <pre>
+        .lista-pseudoclase li:nth-child(2n+1) {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+    </pre>
+    <p><mark>(2n+1)</mark>Dara estilos de dos en dos y el +1 es en el caso de una lista, cuando llegue al final y no haya otro para hacer ese dos en dos, ira al princpio y re acomodara
+        todo de nuevo.</p>
+
+    <pre>
+        .lista-pseudoclase li:nth-child(even) {
+            background-color: slateblue;
+        }
+        
+    </pre>
+    <p><mark>(even)</mark> significa par en ingles y seleccionara a todos los elementos pares.</p>
+
+    <pre>
+        .lista-pseudoclase li:nth-child(odd) {
+            background-color: pink;
+        }
+        
+    </pre>
+    <p><mark>(odd)</mark> es impar en ingles y seleccionara a todos los elementos impares.<br>
+    Ejemplo de lista usando los ultimos visto, desde first-child hasta nth-child(odd)</p>
+
+    <ol class="lista-pseudoclase">
+        <li>Esmeralda</li>
+        <li>Diamante</li>
+        <li>Onix</li>
+        <li>Oro</li>
+        <li>Plato</li>
+        <li>Bronce</li>
+        <li>Cobre</li>
+        <li>Perla</li>
+        <li>Cuarzo</li>
+        <li>Pirita</li>
+    </ol>
+    
+    <p>Para los siguientes ejemplos, primero pondre como se ve el documento HTML, y al final quedara como se ve el resultado.</p>
+    <pre>
+        
+    &lt;article class="art-pseudoclase"&gt;
+            &lt;header&gt;Soy un header&lt;/header&gt;
+            &lt;p&gt;soy un p&lt;/p&gt;
+            &lt;div&gt;soy div&lt;/div&gt;
+            &lt;p&gt;otro pe&lt;/p&gt;
+            &lt;section&gt;soy section&lt;/section&gt;
+            &lt;p&gt;soy otro pe &lt;/p&gt;
+            &lt;div&gt;soy div &lt;/div&gt;
+            &lt;p&gt;soy pe final&lt;/p&gt;
+            &lt;footer&gt;soy un footer&lt;/footer&gt;
+    &lt;/article&gt;
+    </pre>
+    <p>Si quisieramos seleccionar y darle estilo al primer p y solo a ese, deberiamos usar ":first-of-type"
+        <pre>
+            .art-pseudoclase p:first-of-type {
+                color: royalblue;
+            }
+        </pre>
+    <mark>:first-of-type</mark> quiere decir el primero de su tipo.</p>
+
+    <pre>
+        .art-pseudoclase p:last-of-type {
+            color: blue;
+        }
+    </pre>
+    <p><mark>:last-of-type</mark> lo contrario al anterior, este seria el ultimo de su tipo.</p>
+
+    <pre>
+        .art-pseudoclase p:nth-of-type(2) {
+            color: fuchsia;
+        }
+    </pre>
+    <p><mark>:nth-of-type()</mark> como el nth de posicion aca es lo mismo, seleccionara a el p que ocupe esa posicion</p>
+
+    <pre>
+        .art-pseudoclase *:not(p) {
+            color: orangered;
+        }
+    </pre>
+    <p><mark>not()</mark> se utiliza para decir "Quiero poner estilo a TODO peero no quiero que se le ponga estilo a los que esten dentro de los ()",<br>
+        y si se quisiera poner mas elementos para proteger del selector universal, solo debe poner "," y los otros elementos o selectores.</p>
+
+    <pre>
+        .art-pseudoclase *:not(p, otro elemento, .clase, selectores,etc) {
+            color: orangered;
+        }
+    </pre>
+    <p>la pseudo clase <mark>:not()</mark> se usa para negar algo, por ejemplo yo tengo estilos en un h2 pero quiero que los que contengan la clase .info no se vea 
+        afectada por el selector universal, entonces pondria :not(.info, b, etc).<br>Ejemplo con los elementos usados:</p>
+
+    <article class="art-pseudoclase">
+        <header>Soy un header</header>
+        <p>soy un p</p>
+        <div>soy div</div>
+        <p>otro pe</p>
+        <section>soy section</section>
+        <p>soy otro pe</p>
+        <div>soy div</div>
+        <p>soy pe final</p>
+        <footer>soy un footer</footer>
+    </article>
+    <br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="pseudoelementos">
+    <h2 class="selector-2">Pseudo Elementos</h2><p>Los pseudo elementos se usan para dar estilo a parte específicas de un elemento y/o agregar contenido adicional,
+        se representa con dos puntitos ::</p>
+
+    <pre>
+        .libro::before {
+            content: "📚";
+        }
+    </pre>
+    <p><mark>::before</mark> se usa para agregar contenido o estilos antes de un elemento o contenido en HTML.</p>
+
+    <pre>
+        .libro::after {
+            content: "📈";
+        }
+    </pre>
+    <p><mark>::after</mark> se usa para agregar contenido o estilos despues de un elemento o contenido en HTML.</p>
+
+    <pre>
+        .pseudo-elemento::first-letter {
+            font-size: 25px;
+            font-weight: bold;
+        }  
+    </pre>
+    <p><mark>::first-letter</mark> quiere decir primera letra, le dara estilos a la primera letra de un texto o de lo que se quiera.</p>
+
+    <pre>
+        .pseudo-elemento::first-line {
+            color: salmon;
+        }
+    </pre>
+    <p><mark>::first-line</mark> quiere decir primera linea, y le dara estilos a la primera liena de un texto.</p>
+
+    <pre>
+        .pseudo-elemento::selection {
+            background-color: black;
+            color: greenyellow;
+        }
+    </pre>
+    <p><mark>::selection</mark> sirve para que cuando hacemos copiar y pegar, se marque de un determinado color el estilo al copiar.</p>
+    
+    <pre>
+        .placeholder::placeholder {
+            color: red
+        }
+    </pre>
+    <p><mark>::placeholder</mark> es para darle estilo a los placeholders.<br><br><b atributob="b">Ejemplo con los elementos explicados:</b></p>
+
+    <article>
+         <p>
+          El libro de las finanzas <span class="libro">Autor</span> <span class="libro-precio">50.000</span></p>
+         <p class="pseudo-elemento">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi asperiores possimus, suscipit eos atque consequuntur, 
+        laudantium error maxime quis beatae corporis facilis voluptatem vel perferendis nam, earum dolorem similique architecto!</p>
+
+       <input class="placeholder" type="text" placeholder="escribi acá">
+
+    </article>
+    <br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="descendientes">
+    <h2 class="selector-2">Selectores descendientes</h2><p></p>
+        <pre>
+            &lt;div&gt;&lt;h3&gt;&lt;p&gt;Hola estoy dentro de un "p", que esta dentro de "h3", y que a su vez, esta dentro de un "div"&lt;/p&gt;&lt;/h3&gt;&lt;/div&gt;
+        </pre>
+        
+    <p>En CSS:</p>
+    <code>
+        <pre>
+            div h3 p {
+                Los estilos que querramos aplicar
+            }
+        </pre>
+    
+
+    <p><mark>" div h3 p "</mark>Este ejemplo, es como se puede poner algo por descendientes, desde el mas grande de los contenedores hasta el ultimo. Si quisieramos
+    seleccionar todos los "p" que estan dentro de un "h3" y que a su vez estan dentro de un "div" seria de esta forma, o si quisieramos seleccionar cualquier otra cosa dentro de una etiqueta
+    es asi, siempre desde el mas grande se comienza.<br></p>
+
+    <div><h3><p>Hola soy un p dentro de un h3 dentro de un div</p></h3></div>
+    
+    <b>Tambien se podria hacer por clases:</b>
+
+        <pre>
+            &lt;div&gt;&lt;h3 class="selec-descendientes"&gt;&lt;p&gt;Hola estoy dentro de un "p", que esta dentro de "h3", y que a su vez, esta dentro de un "div"&lt;/p&gt;&lt;/h3&gt;&lt;/div&gt;
+        </pre>
+
+    <p>En CSS:</p>
+        <pre>
+            .selec-descendientes p {
+                Los estilos que querramos aplicar
+            }
+        </pre>
+
+        <div><h3 class="selec-descendientes"><p>Hola soy un p dentro de un h3 dentro de un div</p></h3></div>
+
+    <p>Lo que cambia es que se pone un class dentro del elemento HTML que querramos, y luego el elemento que queriamos, sirve para acortar los procesos.</p>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="formad">
+    <h2 class="selector-2">Otra forma de escribir/aplicar los selectores</h2><br><p>Esta la manera de aplicar los selectores de la manera anterior cada, 
+        como todos los estilos en una sola clase, etc o hacerlo asi:</p><br><b>En HTML:</b>
+
+    <pre>
+        &lt;p class="text-22 color-greenyellow bg-black"&gt;La crema pastelera es superior al dulce de leche&lt;/p&gt;
+    </pre>
+    <b>En CSS:</b>
+
+    <pre>
+        .text-22 {
+            font-size: 22px;
+        }
+        
+        .color-greenyellow {
+            color: greenyellow;
+        }
+        
+        .bg-black {
+            background-color: black;
+        }
+        
+    </pre>
+    <p>Lo unico que cambia es que en vez  de poner todos los estios en una sola clase, se reparte en varias. Eso no es unico de las class, se puede hacer
+        con todos los selectores, pero es mejor usar esta manera con las clases o atributos para mi, y tambien capaz, sea mas conveniente usar esta manera 
+        cuando se quiere aplicar muchos estilos a un elemento o elementos. Igual, al final, depende de la comodidad de cada unx, para mi es muy bueno
+        aplicar ambas maneras de escribir.</p>
+
+    <p class="text-22 color-greenyellow bg-black">La crema pastelera es superior al dulce de leche</p>
+    
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="agrupar-selectores">
+    <h2 class="selector-2" >Agrupar Selectores</h2>
+    <p>Agrupar selectores es cuando tenemos por ejemplo elementos HTML que queremos agregarle el mismo estilo, entonces se agrupan selectores usando la 
+        coma <mark>" , "</mark>.<br>Ejemplo:</p>
+
+    <form class="form-agrupselect">
+        <input type="text" name="nombre" placeholder="Pon tu nombre">
+        <input type="text" name="email" placeholder="Pon tu email">
+        <textarea name="comentarios" placeholder="Comentate algo" cols="30" rows="10"></textarea>
+        <input type="submit" name="Enviar">
+    </form>
+    <br>
+    <b>En HTML y CSS:</b>
+
+    <pre>
+        &lt;form class="form-agrupselect"&gt;
+            &lt;input type="text" name="nombre" placeholder="Pon tu nombre"&gt;
+            &lt;input type="text" name="email" placeholder="Pon tu email"&gt;
+            &lt;textarea name="comentarios" placeholder="Comentate algo" cols="30" rows="10"&gt;&lt;/textarea&gt;
+            &lt;input type="submit" name="Enviar"&gt;
+        &lt;/form&gt;
+    </pre>
+
+    <pre>
+        .form-agrupselect input[type="text"],
+        .form-agrupselect input[type="submit"],
+        .form-agrupselect textarea{
+             border-color: greenyellow;
+             background-color: black;
+             color: aqua;
+             border-width: 2px;
+             border-style: dashed;
+             font-size: 22px;
+             display: block;
+             width: 300px;
+        }
+    </pre>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="algocss-c-e-h">
+    <h2 class="selector-2">El algoritmo Css</h2>
+    <ol>
+        <li>La cascada</li>
+        <li>Especidad</li>    
+        <li>Herencia</li>
+    </ol>
+
+    <h3>La cascada</h3>
+    <img src="assets/cascada.gif" alt="cascada en movimiento">
+    <p>A css se le dice estilos en cascada porque los estilos van cayendo como si fuera una cascada.</p>
+
+    <h3>Especifidad</h3>
+    <p>La especifidad son las reglas css que determina cuales esilos se aplicaran al elemento HTML.<br>
+        Con la especifidad podemos aplicar los estilos sin caer en errores, como que si ponemos un estilo a un elemento y luego
+        le ponemos a ese elemento de nuevo otro estilo que no tome este ultimo. La especifidad es muy importante para CSS. 
+    </p>
+    <img src="assets/especifidad-jerar.png" alt="Jerarquia de la especifidad">
+    <p>El important mejor no usarlo, pero en casos extremos que se deba usar, esta ahi. Este aplica para todos los selectores CSS.</p>
+
+    <blockquote id="frase-albert" class="frase-albert" style="color:blue; background-color: aqua; font-size: 15px;" >
+        Si lo puedes imaginar lo puedes lograr. Si lo puedes imaginar lo puedes crear. <br><cite>Albert Einstein.</cite>
+    </blockquote>
+
+    <i class="plj-css" jerar="colores"  id="i-css" style="color:brown">Probando las jerarquias en CSS</i><br>
+
+    <h3>Herencia</h3>
+    <p>Herencia es heredar algo. En CSS no cambia mucho, hereda los valores de sus ancestros mas cercanos. Se debe tener en cuenta que
+    no todas las propiedades CSS se heredan.<br>
+    inherit se usa para heredar una propiedad y initial se usa para poner ese elemento con los estilos predeterminados del navegador.</p>
+     
+     <b> Frase creada por mi: </b>
+        <blockquote class="fm-n">Trata al mundo y a los seres vivios que habitan en el, con el mismo respeto que te gustaria que 
+            te den a ti.<br>
+        <cite> Franco Mazzei.</cite></blockquote>
+    <p>Respetar al mundo y a los seres vivos necesariamente no significa que una persona no pueda consumir carne o usar los recursos naturales, como madera, oro, diamantes, etc., 
+        sino, que implica ser consciente de las implicaciones de nuestras acciones y tomar decisiones responsables. Si alguien quiere comer carne, podría considerar la opción 
+        de consumir productos de granjas que practican la crianza sostenible o reducir el consumo de carne en general, del mismo modo, si se quiere cortar o se quiere ciertos 
+        materiales de la naturaleza, se puede buscar la manera de minimizar el impacto ambiental y como mínimo promover la reforestación. <br>
+        En los casos de extracción de minerales, extraerlos claro, pero luego buscar la manera de que en aquel lugar donde se extrajo todo, plantar árboles o hacer algo para la 
+        naturaleza para minimizar el impacto ambiental.</p>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="reset-normali">
+    <h2 class="selector-2">Reseteo y normalizacion de estilos</h2>
+    <p>Reseteo y normalizacion son maneras de cambiar la configuracion predeterminada del navegador para que este se vea de la misma forma en cualquier navegador,
+         ya que cada navegador tiene una configuracion predeterminada de estilos. <br>
+        <mark>reseteo</mark> elimina los estilos predeterminados del navegador, y <mark>normalización</mark>, reemplaza la configuracion de estilos predeterminada del navegador por otros. <br>
+        Podemos combinar una hoja de reseteo con una de normalizacion o solo poner una de estas dos (yo diria normalizacion), al final esto dependera de las 
+        necesidades y de nuestra comodidad o gustos tambien. Si usamos una hoja de normalizacion bien diseñana y completa, no necesitaremos un reseteo adicional.</p>
+        <p>Podemos usar la hoja de <a href="https://meyerweb.com/eric/tools/css/reset/" target="_blank">reseteo</a>, que no la recomiendo
+        porque reinicia TODO y eleimina la configuracion predeterminada del navegador. <br> O <br>
+        Usar la hoja de <a href="https://necolas.github.io/normalize.css/" target="_blank">normalización</a>, que es mejor para mi, 
+        ya que deja una base solida de configuración para poder trabajar.</p>
+        <p>La hoja de estilos siempre debe ponerse encima de la hoja css que estemos poniendo los estilos, para que el navegador 
+            lea primero a esta y luego a la nuestra.</p><br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="pn">
+   <h2 class="selector-2">Prefijos de navegadores</h2>
+   <p> Basicamente estos son codigos que nos dejan poner instrucciones CSS especificas para los navegadores. Esto nos ayuda a poder 
+    poner propiedades que esten en experimentacion y que solo aplique al navegador que tenga el prefijo, aunque es mejor no usar 
+    propiedades que esten en experimentacion ya que no estarian para todos los navegadores. <br> Algunos prefijos son:<br>
+    <mark>-moz-</mark> para Firefox<br>
+    <mark>-ms-</mark> para Edge<br>
+    <mark>-webkit-</mark> para todos los demas navegadores, como Brave, Chrome, Opera, etc.<br>
+    Si es muy necesario usarlo, podemos recurrir a paginas como <a href="https://autoprefixer.github.io/" target="_blank">Autoprefixer</a>
+    que nos escribiran el prefijo que necesitemos, solo bastara poner nuestro documento css.</p><br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="boxmodel">
+    <h2 box="model">Modelo de caja</h2>
+    <P>El Modelo de caja y es la forma en que el navegador representa a todas las etiquetas que estan dentro de body. Cada etiqueta 
+        genera una caja y el comportamiento de esa caja depende de la etiqueta, si es de linea o de bloque (este comportamiento 
+        se puede cambiar con display en CSS). Es muy importante el modelo de caja porque entre todas las cosas para que sirve, 
+    en CSS nos ayuda a diseñar bien nuestra pagina porque podemos ver todo lo que ocupan nuestras etiquetas, bordes, altos, anchos, etc.</P>
+
+    <p>Hay dos tipos de caja:</p>
+    <b>Las de bloque (block boxes)</b><p class="pinline">, siempre se ajustarán al tamaño del ancho total que las contiene.</p><br>                     
+    <b>Las de línea (inline boxes)</b><p class="pinline">, solo se ajustarán al tamaño del contenido.</p><br>
+    <p>Con la propiedad "display" podemos hacer que una etiqueta de bloque se coniverta en una de linea y viceversa, Ejemplo:</p>
+    <pre class="pre-inline-block">
+        p {
+            display: inline;
+        }
+
+        b {
+            display: block;
+        }
+    </pre><b>box-inline-block</b>
+    <p>De esta forma p que es de bloque se convierte en de linea y b que es de linea se convierte en una de bloque.<br>
+    Ejemplos con propiedades de caja:</p><br><br>
+    <b class="propiedad-box">La libertad es un derecho y no habria que luchar por ella.</b><b class="propiedad-box2">La libertad es un derecho y no habria que luchar por ella.</b>
+    <br><br><br><br>
+    <h4>width y heigth</h4><br>
+    <p display="none">Hola soy display none ocultooo.</p>
+
+    <h2 class="selector-2">Colapso de margenes</h2>
+    <br>
+    <div class="colapsom"></div>
+    <div class="colapsom2"></div>
+    <br>
+    <p>Ejemplo con left y rigth  (no hay colapso).</p>
+    <div class="C-"></div>
+    <div class="C--"></div>
+    <br><br>
+    <h2 class="selector-2">Propiedad visibility</h2>
+
+    <p class="hidden">Hola soy display none ocultooo, pero mi espacio no se vaa.<br>
+    <br><br></p>
+
+    <div class="box-sizing">
+        <b>Box-sizing:</b>
+    </div>
+    <br>
+    <div class="box-sizing-border">
+        <b>Box-sizing:</b>
+    </div>
+    <br>
+
+    <b>Outline</b>
+    <div class="outline"></div>
+    <br>
+    
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="mbem">
+    <h2 class="selector-2">Metodología BEM</h2>
+    <p>Esto tiene que ver mucho con la parte de <a href="index.html#algocss-c-e-h"> algoritmos css</a>, mas que nada y sobre todo
+        con especificidad.<br>
+    En especificidad puse que se puede poner el <b>!important</b>cuando se quiere que un estilo no se cambie por nada peero que no es 
+    recomendable usar a menos que sea casso extremos...bueno, con la metodologia que se use se puede arreglar esto y no es necesario usar el
+     !important</p>
+     <p>Como dije en el word, Sirve para escribir en CSS de manera más clara y facil de mantener porque permite que se puedan 
+        reutilizar las clases (class) y ayuda a prevenir los conflictos de estilos. Es imporntante saber que con esta Metodología
+    siempre se usara el atributo class y por ende en css tambien aunque ahi ya se puede combinar con otros selectores. </p>
+
+    <div class="contact-form">
+        <input type="text" class="contact-form__input">
+        <input type="password" class="contact-form__input">
+        <input type="text" class="contact-form__input">
+        <input type="text" class="contact-form__input--FI">
+    </div>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="tdu">
+    <h2 class="selector-2">Teoría de unidades</h2>
+    <p>La teoria de medidas es para saber de que forma podemos modificar el tamaño de la mayoria de los elementos HTML.<br>
+    Hay dos unidades de medidas:<br>
+    <b>Fijas:</b> son fijas, medidas absolutas que no dependen de una unidad de referencia por ejemplo cm, px, mm.</br>
+    <b>Relativas:</b> son las que su tamaño depende de un valor de referencia y aca se usan unidades em, rem o %.<br>
+    <b>em:</b> basa su tamaño en cuestion de una unidad fija.<br>
+    <b>%:</b> basa su tamaño en cuestion del elemento que lo contiene, como el 16% de un div.<br>
+    <b>rem:</b> basa su tamaño en cuestion de las medidas dadas en el tamaño de fuente ya definido, que suele ser html 
+    <pre>html {
+        font-size: 18px;}</pre><br> todo lo que contenga rem estaria midiendo lo que dice el tamaño de fuente.</p><br>
+    <p>Ejemplos:</p>
+
+    <h3 class="title-three">Medida fija</h3>
+    <h3 class="title-three__3">medida relativa</h3>
+
+    <pre><br>
+        <b>Medida fija</b>
+        .title-three {
+            font-size: 30px;
+        }
+        <b>Medida relativa</b>
+        .title-three__3 {
+            font-size: 1.875em;
+        }
+    </pre>
+
+    <b>Viewport heigth y width</b><br>
+    <p><mark>Viewport</mark>se usa para controlar los tamaños de los elementos que se mostraran el la pagina.<br>
+    <mark>viewport heigth(vh)</mark> es para controlar el alto o largo y <mark>viewport width(vw)</mark> es para controlar el ancho.<br>
+    Ejemplo:</p>
+
+    <pre class="htre">
+        .htre {
+            color: greenyellow;
+            font-size: 30px;
+            background-color: greenyellow;
+            width: 50vw;
+            height: 50vh;
+        }
+        <p>Toda esta etiqueta que nos envuelve (pre) ocupara 50 de ancho y 30 de alto o largo.</p>
+    </pre>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="prpt-css">
+    <h2 class="selector-2">Propiedades de texto CSS</h2>
+    <p class="prop__d-t">
+    <b>font-size</b>, para modificar el tamaño del texto. <br>
+    <b>font-family</b>, para cambiar el estilo del texto. <br>
+    <b>color</b>, modificar el color. <br>
+    <b>line-heigth</b>, controlar el espacio que ocupa una letra. <br>
+    <b>font-weigth</b>, modifica el grosor. <br>
+    <b>text-align</b>, establece donde se vera el texto, si izquierda, derecha, centro, etc. <br>
+    <b>text-decoration</b>, decora al texto, subrayados, resaltador, etc. <br>
+    <b>text-transform</b>, cambia el aspecto del texto pero en terminos de mayúsculas o minúsculas. <br>
+    <b>latter-spacing</b>, define el espacio entre las letras. <br>
+    <b>word-spaccing</b>, define el espacio entre palabras. <br>
+    <b>text-shadow</b>, le da sombra al texto. <br>
+    <b>text-overflow</b>, maneja el comportamiento del texto en caso de que exceda el espacio
+        disponible dentro de su contenedor. Se suele usar con otras propiedades para lograr el 
+        efecto deseado, como:<br>
+        <b>white-space</b>, controla como se maneja los espacios en blanco, su valor por defecto es:<br>
+        <b class="prop__d-t-b">normal</b>, ajusta automaticamente el texto a la anchura del contenedor, respetando los espacios adicionales
+         y saltos de linea.<br>
+        <b class="prop__d-t-b">nowrap</b>, este muestra el texto en una sola linea ignorando espacios adicionales y saltos de linea.<br>
+        <b>overflow</b>, dice como se comportara el contenido si se exceden los limites. algunos valores:<br>
+        <b class="prop__d-t-b">visible</b>, deja que el contenido pueda salir del contenedor y ponerse encima de otros elementos,
+            desplazándolos hacia arriba o abajo<br>
+        <b class="prop__d-t-b">hidden</b>, elimina a la vista del usuario/a el contenido que exceda el contenedor.<br>
+       <b class="prop__d-t-b">scroll</b>, le pone barras de dezplazamiento incluso si no excede el contenedor.<br>
+       <b class="prop__d-t-b">auto</b>, este solo muestra las barras si de verdad excede el contenedor.<br>
+       <b>text-overflow</b>, indica como se debe ver visualmente el texto.<br>
+       <b class="prop__d-t-b">clip</b>, recorta el texto excedente, similar a hidden pero solo aplica al texto dentro de un elemento en particular, 
+        como div o span.<br>
+       <b class="prop__d-t-b">elipsis</b>, muestra puntos suspensivos al final del texo, diciendo que hay mas contenido.</p><br>
+       <b>Ejemplos:</b>
+       <p class="text-properties">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit cupiditate odit repudiandae cum fugit numquam quos culpa inventore praesentium ipsa. 
+        Animi ullam corrupti quam repudiandae explicabo saepe unde magni veritatis!</p><br>
+      
+    <h2 class="selector-2">Como exportar tipografías</h2>
+    <p style="font-family: Lobster Two, cursive;">Si no hay en nuestro editor el estilo de letra que queremos aplicarle a nuestro texto, podemos exportar una tipografia si si :D.<br>
+    Podemos ir hacia <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> y allí se elije, y hay instrucciones de como colocarla en nuestro documento.<br>
+   Se selecciona la tipografía elegida, copiamos el link y lo ponemos en la parte de head en el documento HTML.</p><br>
+   <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="Position-relative">
+    <h2 class="selector-2">Position relative y Z index</h2><br>
+
+       <div class="re1">Position one</div>
+       <div class="re2">Position two</div>
+       <div class="re3">Position three</div>
+       <div class="re4">Position four</div>
+       <br>
+
+       <div class="zin1">Position one</div>
+       <div class="zin2">Position two</div>
+       <div class="zin3">Position three</div>
+       <div class="zin4">Position four</div>
+       <br><br>
+
+       <b>Conflicto entre padres e hijos:</b>
+       <div class="father">
+        <div class="children"></div>
+       </div>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="Pabsolute">
+
+    <h2 class="selector-2">Position absolute</h2>
+
+        <div class="box1">Box 1</div>
+        <div class="box2">Box 2</div>
+        <div class="box3">Box 3</div>
+    <br><br><br>
+
+    <div class="container">
+
+        <div class="Box1">Box 1</div>
+        <div class="Box2">Box 2</div>
+        <div class="Box3">Box 3</div>
+        <div class="Box4">Box 4</div>
+        <div class="Box5">Box 5</div>    
+    </div>
+
+    <a href="positionabsolute.html">El de word aca, porque este tiene cambios para que no afecte a los otros divs.</a><br><br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="fixcky">
+    <h2 class="selector-2">Position fixeds</h2>
+    <p>El ejemplo lo hice a base del titulo "Aprendiendo CSS" pero con otro porque para que conserve su lugar al subir ya se de usar js. <br>
+        <h3 class="fixedtitle">Aprendiendo css</h3>
+    <pre> 
+        .fixedtitle {
+            background-color: black;
+            color: greenyellow;
+            top: 0;
+            right: 0;
+            position: fixed;
+         }
+</pre></p>
+    <p>Tiene un z-index de 200 para que se ponga por encima de todos los elementos. y fixed va bajando mientras bajamos en la pagina, como si fuera un anuncio
+        o una barra de navegacion. 
+    Pero que pasa si el elemento que ponemos nos ocupa espacio osea, queda tapando algo al subir? Se le puede poner al bodo un padding-top de x cantidad de px 
+    y al elemento un margin de -x cantidad de px o positivo esos px o a veces ni es necesario aplicarles un margin y con "padding-top" es suficiente, y de esa 
+    forma se le asignaria un lugar, es una forma de hacerlo, si no otra manera es como dije, con js.</p><br>
+
+    <h2 class="selector-2">Position sticky</h2>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident mollitia aut, tempora in voluptas quas animi! Sit sint laudantium consequatur 
+    ullam recusandae, eum neque magni voluptatum voluptate hic. Accusantium, quis!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident mollitia aut, tempora in voluptas quas animi! Sit sint laudantium consequatur 
+    ullam recusandae, eum neque magni voluptatum voluptate hic. Accusantium, quis!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident mollitia aut, tempora in voluptas quas animi! Sit sint laudantium consequatur 
+    ullam recusandae, eum neque magni voluptatum voluptate hic. Accusantium, quis!<br>
+    <b class="stickyb">Elemento sticky</b><br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident mollitia aut, tempora in voluptas quas animi! Sit sint laudantium consequatur 
+    ullam recusandae, eum neque magni voluptatum voluptate hic. Accusantium, quis!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident mollitia aut, tempora in voluptas quas animi! Sit sint laudantium consequatur 
+    ullam recusandae, eum neque magni voluptatum voluptate hic. Accusantium, quis!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident mollitia aut, tempora in voluptas quas animi! Sit sint laudantium consequatur 
+    ullam recusandae, eum neque magni voluptatum voluptate hic. Accusantium, quis!
+    <br><br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="do">
+    <h2 class="selector-2">Display y overflow</h2>
+
+    <p>Estos son de bloque, porque ocuapn todo el ancho de linea.</p>
+    <div class="cubin"></div>
+    <div class="cubin"></div>
+    <p>Estos son los mismo de arriba pero son elemento de linea y se ven asi porque no importa si poenmos o no width o height, no se puede modificar su ancho
+        y largo. </p><br>
+    <div class="cubininline"></div>
+    <div class="cubininline"></div>
+    <br><br>
+    <p>Estos son elementos de linea-bloque, porque si se puede modificar su ancho y largo.</p>
+    <div class="cubininlineb"></div>
+    <div class="cubininlineb"></div>
+
+    <h3 class="selector-2">Overflow</h3>
+    <div class="overflowp">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sunt, quidem sequi nisi quas quae voluptatem assumenda. 
+            Totam odio minus, placeat quibusdam error, ab consequatur ad iusto accusantium eligendi blanditiis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sunt, quidem sequi nisi quas quae voluptatem assumenda. 
+            Totam odio minus, placeat quibusdam error, ab consequatur ad iusto accusantium eligendi blanditiis.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sunt, quidem sequi nisi quas quae voluptatem assumenda. 
+            Totam odio minus, placeat quibusdam error, ab consequatur ad iusto accusantium eligendi blanditiis.</p>
+    </div><br>
+
+     <div class="al-ien"><img src="assets/a.jpg"></div><br>
+     <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="Float">
+    <h2 class="selector-2">Float</h2>
+
+    <div class="floatcl">
+        <img src="assets/a.jpg">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. A perspiciatis voluptate beatae rerum obcaecati pariatur 
+        tenetur facilis corporis! Officiis molestiae repellendus voluptate cumque architecto nemo est cum, quam laboriosam sit.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. A perspiciatis voluptate beatae rerum obcaecati pariatur 
+        tenetur facilis corporis! Officiis molestiae repellendus voluptate cumque architecto nemo est cum, quam laboriosam sit.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. A perspiciatis voluptate beatae rerum obcaecati pariatur 
+        tenetur facilis corporis! Officiis molestiae repellendus voluptate cumque architecto nemo est cum, quam laboriosam sit.
+        A perspiciatis voluptate beatae rerum obcaecati pariatur 
+        tenetur facilis corporis! Officiis molestiae repellendus voluptate cumque architecto nemo est cum, quam laboriosam sit.
+        A perspiciatis voluptate beatae rerum obcaecati pariatur 
+        tenetur facilis corporis! Officiis molestiae repellendus voluptate cumque architecto nemo est cum, quam laboriosam sit.
+    </div>
+    <br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="ofc">
+    <h2 class="selector-2">Object-fit y cursor</h2>
+    <b>Contain</b><br>
+    <img class="img-rickC"src="assets/ricks.jpg" alt="Rick sanches en medio de un campo"><br>
+    <b>Cover</b><br>
+    <img class="img-rickCov"src="assets/ricks.jpg" alt="Rick sanches en medio de un campo"><br>
+    <b>None</b><br>
+    <img class="img-rickNone"src="assets/ricks.jpg" alt="Rick sanches en medio de un campo"><br>
+    <b>Scale-down</b><br>
+    <img class="img-rickScale"src="assets/ricks.jpg" alt="Rick sanches en medio de un campo"><br>
+
+    <p>Cursor</p>
+    <div class="cursord"></div>
+    <br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="coloriz">
+    <h2 class="selector-2">Colorización</h2>
+
+    <div class="coloriZa">
+        <div colori="zado"></div>
+    </div>
+    <br>
+
+    <p class="colorization">Estilo con colores por nombre</p>
+    <p class="colorization2">Estilo con colores por hex</p>
+    <p class="colorization3">Estilo con colores por rgb</p>
+    <p class="colorization4">Estilo con colores por rgba</p>
+
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="responsive">
+    <h2 class="selector-2">Responsive design - mobile first</h2>
+    <a href="responsivemobile.html"> aqui ta</a><br><br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+
+<article id="venmf">
+    <h2 class="selector-2">Ventana modal con fixed</h2>
+    <article id="mod-1" class="window-modal">
+        <div class="modal-content">
+            <p>Yo puedo lograr lo que sea y puedo contra todo.</p>
+            <p>Yo puedo lograr lo que sea y puedo contra todo.</p>
+            <p>Yo puedo lograr lo que sea y puedo contra todo.</p>
+        </div>
+        <a href="#cerrar">cerrar</a>
+    </article>
+</article>
+<a href="#mod-1" class="modalL">abrir modal</a>
+<br><br>
+<a href="index.html#aprendiendocss">⬆️</a>
+<hr>
+
+
+<article id="flbox">
+    <h2 class="selector-2">Flexbox</h2>
+    <a href="flexbox.html" target="_blank">aqui ta c:</a><br><br>
+    <a href="tareaflexbox.html" target="_blank">tarea con lo aprendido</a><br><br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<article id="grid">
+    <h2 class="selector-2">Grid</h2>
+    <a href="Grid.html" target="_blank">Aqui ta c:</a><br><br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="transition">
+    <h2 class="selector-2">Transition</h2><br>
+    <div class="container-T">
+        <div class="caja-T"></div>
+    </div><br>
+    <div class="container-T1">
+        <div class="caja-T1">Linear</div>
+        <div class="caja-T1">Ease</div>
+        <div class="caja-T1">ease-in</div>
+        <div class="caja-T1">ease-out</div>
+        <div class="caja-T1">ease-in-out</div>
+    </div>
+    <br><br>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="ani">
+    <h2 class="selector-2">Animaciones</h2>
+    <div class="Container-A">
+        <div class="Caja-A"></div>
+    </div>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="transform">
+    <h2 class="selector-2">Transform</h2>
+    <div class="Container-transform">
+        <div class="Caja-transform"><!--<h5>Hola</h5> --></div> 
+    </div> 
+    <a href="index.html#aprendiendocss">⬆️</a> 
+</article>
+<hr>
+
+<article id="variables">
+    <h2 class="selector-2">Variables</h2>
+    <div class="Container-var"></div>
+    <div class="Container-var2"></div>
+    <h5>prueba</h5>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="filtros">
+    <h2 class="selector-2">Filtros</h2>
+    <div class="filter"><img src="assets/Gecko.jpg" alt="Gecko forestal gigante"></div>
+    <div class="filter-shadow"><img src="assets/shadow-filter.png"></div>
+    <br>
+    <h3 class="selector-2">Practicnado filtro</h3>
+    <div class="containerpraci">
+        <div class="pracfilter uno"></div><div class="pracfilter dos"></div>
+    </div>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+
+<article id="Dirc">
+    <h2 class="selector-2">Direction</h2>
+    <div class="direc">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, asperiores? Maxime, mollitia soluta ut beatae, doloremque non fugit dolor 
+            expedita deserunt harum sed fugiat autem, perferendis dicta nisi provident corrupti.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, asperiores? Maxime, mollitia soluta ut beatae, doloremque non fugit dolor 
+            expedita deserunt harum sed fugiat autem, perferendis dicta nisi provident corrupti.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, asperiores? Maxime, mollitia soluta ut beatae, doloremque non fugit dolor 
+            expedita deserunt harum sed fugiat autem, perferendis dicta nisi provident corrupti.</p>
+    </div>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+<hr>
+<article id="letterS">
+    <h2 class="selector-2">Letter spacing y User selected</h2>
+    <div class="letterSp">
+        <p>¡Hi, nice to meet you!</p>
+    </div>
+    <a href="index.html#aprendiendocss">⬆️</a>
+</article>
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+   
+    
+
+
+
+
+   
+
+
+
+    
+</body>
+</html> 

@@ -1,0 +1,14 @@
+.p-line {
+    display: inline;
+}
+
+.be {
+    display: block;
+}
+
+form {
+    background-color: lightsalmon;
+    color: black;
+    border-style: solid;
+    border-color: red;
+}

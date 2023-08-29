@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout áreas</title>
+    <style>
+         html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+    }
+
+    *,
+    *::after,
+    *::before {
+    box-sizing: inherit;
+    }
+
+    body {
+    display: grid;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    grid-template-columns: 150px repeat(4, 1fr);
+    grid-template-rows: 90px 90px repeat(3,1fr) 90px; 
+    grid-template-areas: 
+    "header header    header     header     header"
+    "nav    ac-left   ac-center  ac-center  ac-right "
+    "nav    ac-left   ac-center  ac-center  ac-right "
+    "nav    ac-middle ac-middle  ac-middle  ac-middle"
+    "nav    ac-lower  ac-lower   ac-lower   ac-lower"
+    "footer footer    footer     footer     footer";
+    }
+    h2 {
+        text-align: center;
+        color: rgb(255, 115, 0);  
+    }
+    .header {
+        grid-area: header;
+        background: #0ff;   
+    }
+    .nav {
+        grid-area: nav;
+        background: #f00;
+    }
+
+    .ac-left {
+       grid-area: ac-left;
+       background: #0f0;
+    }
+    .ac-center {
+       grid-area: ac-center;
+       background: rgba(0, 102, 0, 0.932);
+    }
+    .ac-right {
+        grid-area: ac-right;
+        background: rgb(116, 255, 116);
+    }
+
+    .ac-middle{
+        grid-area: ac-middle;
+        background: #555;
+    }
+    .ac-lower {
+        grid-area: ac-lower;
+        background: #222; 
+    }
+    .footer {
+        grid-area: footer;
+        background: #0ff; 
+    }
+
+    @media screen and (max-width:700px) {
+        body {
+    display: grid;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 110px 60px repeat(3,1fr) 60px;
+    grid-template-areas: 
+    "header    header     header     header     header     header"
+    "nav       nav        nav        nav        nav        nav "
+    "ac-left   ac-left    ac-center  ac-center  ac-right   ac-right"
+    "ac-middle ac-middle  ac-middle  ac-middle  ac-middle  ac-middle "
+    "ac-lower  ac-lower   ac-lower   ac-lower   ac-lower   ac-lower"
+    "footer    footer     footer     footer     footer     footer";
+    }
+    h2 {
+        text-align: center;
+        color: rgb(255, 115, 0);
+    }
+    .header {
+        grid-area: header;   
+    }
+    .nav {
+        grid-area: nav;
+    }
+    .ac-left {
+        grid-area: ac-left;
+    }
+    .ac-center {
+        grid-area: ac-center;
+    }
+    .ac-right {
+        grid-area: ac-right;  
+    }
+    .ac-middle{
+        grid-area: ac-middle;
+    }
+    .ac-lower {
+        grid-area: ac-lower; 
+    }
+    .footer {
+        grid-area: footer;
+    } 
+    }
+
+    </style>
+</head>
+<body>
+    <header class="header"><h2>Header</h2></header>
+    <nav class="nav"><h2>nav</h2></nav>
+    <article class="ac-left"><h2>Upper content left</h2></article>
+    <article class="ac-center"><h2>Upper content center</h2></article>
+    <article class="ac-right"><h2>Upper content right</h2></article>
+    <article class="ac-middle"><h2>Middle content</h2></article>
+    <article class="ac-lower"><h2>Lower content</h2></article>
+    <footer class="footer"><h2>Footer</h2>
+    
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej. Prácticos Flexbox</title>
+    <link rel="icon" href="assets/icons8-overwatch-64.png">
+    <style>
+        html {
+    box-sizing: border-box;
+  }
+  *, 
+  *:before, 
+  *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  img { /*para que las imagenes se muestren responsive*/
+    max-width: 100%;
+    height: auto;
+  }
+
+  main {
+    flex-grow: 1; 
+  }
+ 
+  .titulares {
+    padding: 0.625rem;
+    background: rgb(27, 0, 32);
+    color: #fff;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+  }
+  a:hover {
+    color: #666;
+  }
+
+  .menu ul {
+    list-style-type: none;
+  }
+
+  .logo img {
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+  }
+  .Heroimage {
+    min-height: 100vh;
+    background-image: url(assets/1600_Dva.jpg);
+    color: #fff;
+  }
+
+  .Heroimage div {
+    min-height: inherit;
+    /*display: flex;
+    justify-content: center; /esto es para centrarlo perfectamente, pero se veía feo asi que no lo pongo/
+    align-items: center;
+    text-align: center;*/
+    background-color: rgba(0, 0, 0, .40);
+    padding: 20px;
+  }
+
+  .Heroimage h1 {
+    font-size: 4vw;
+  }
+  
+  @media screen and (min-width:1024px) {
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu ul{
+        display: flex;
+    }
+    .menu li {
+        padding: 5px;
+    }
+
+  }
+
+  @media screen and (max-width:1023px) {
+    .logo {
+        padding-bottom: 10px;
+    }
+    
+    .Heroimage {
+        background-size: 100% auto;
+    }
+  }
+
+  /*los otros ejercicios de imágenes como en zic zac o en forma de columna y responsive*/
+  .titulo2 {
+    background: rgb(27, 0, 32);
+    color: #fff;
+    height: 50px;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+
+  .Pover {
+    width: 500px;
+    height: auto;
+  }
+
+  .flex-responsive { /* esto es de como hacer responsive sin Boostrap o @media*/
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .flex-responsive-I{ /* esto es de como hacer responsive sin Boostrap o @media*/
+    border: thin solid #0f5;
+    flex: 1 1 200px;
+  }
+
+
+  @media screen and (min-width:1024px) {
+    .flex-container {
+      display: flex;
+      align-items: center; 
+    }
+
+    .flex-item {
+      flex: 0 0 50%;
+    }
+
+    /*.flex-order1 {
+      order: 1;
+    }*/
+
+    .row-reverse {
+      flex-direction: row-reverse;
+    }
+
+  }
+    </style>
+</head>
+<body>
+    <header class="titulares header">
+        <div class="logo"><img src="assets/dva-logo.png"></div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#"> 1</a></li>
+                <li><a href="#"> 2</a></li>
+                <li><a href="#"> 3</a></li>
+                <li><a href="#"> 4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="Heroimage">
+            <div>
+                <h1>¡Dva is the best tanks of Overwatch!</h1>
+            </div>
+        </article>
+        <h2 class="titulo2">Otros tanques muy buenos</h2>
+        <section class="flex-container">
+          <article class="flex-item"><!--flex-order1 seria para que se vea las imágenes en forma zic zac primero imagen luego texto-->
+            <h3>Wrecking Ball</h3>
+            <p>Hammond (alias "La rata") es un hámster super inteligente que controla un robot cuadrúpedo que puede transformarse en una bola de demolición de alta velocidad 
+              equipada con un gancho de agarre y dos grandes cañones cuadrúpedos.</p>
+          </article>
+          <article class="flex-item">
+            <img class="Pover" src="assets/wreckingball-00.jpg" alt="Personaje de un videojuego, un hamster super inteligente dentro de una armadura robótica">
+          </article>
+        </section>
+        <section class="flex-container row-reverse"> <!--se lo aplica a la etiqueta madre porque al transformarse en reverse, tiene que ser a todo el contenedor y no solo al articulo. 
+          Esta seria otra forma de hacer el efecto zic zac sin ponérselo a article-->
+          <article class="flex-item">
+            <h3>Roadhog</h3>
+            <p>Roadhog (alias "El cerdo") es un asesino enmascarado y despiadado conocido por ser un destructor. Su equipamiento principal es un arma de chatarra dispersa de corta distancia
+               y un gancho con cadena.</p>
+          </article>
+          <article class="flex-item">
+            <img class="Pover" src="assets/roadhog-00.jpg" alt="Un personaje de un juego, de gran altura y masa corporal con una mascara de gas">
+          </article>
+        </section>
+        <h3>Los demás personajes del juego</h3> <!--manera de como hacer responsive sin usar Boostrap o @media-->
+        <section class="flex-responsive">
+          <article class="flex-responsive-I">Junkrat</article>
+          <article class="flex-responsive-I">Zenyatta</article>
+          <article class="flex-responsive-I">Bastion</article>
+          <article class="flex-responsive-I">Genji</article>
+          <article class="flex-responsive-I">Orisa</article>
+          <article class="flex-responsive-I">Tracer</article>
+          <article class="flex-responsive-I">Mercy</article>
+          <article class="flex-responsive-I">Hanzo</article>
+          <article class="flex-responsive-I">Baptiste</article>
+          <article class="flex-responsive-I">Kiriko</article>
+          <article class="flex-responsive-I">Reinhardt</article>
+          <article class="flex-responsive-I">Mei</article>
+          <article class="flex-responsive-I">Symmetra</article>
+          <article class="flex-responsive-I">Zarya</article>
+          <article class="flex-responsive-I">Widowmaker</article>
+          <article class="flex-responsive-I">Pharah</article>
+          <article class="flex-responsive-I">Doomfist</article>
+          <article class="flex-responsive-I">Winston</article>
+          <article class="flex-responsive-I">Brigitte</article>
+          <article class="flex-responsive-I">Cassidy</article>
+          <article class="flex-responsive-I">Ashe</article>
+          <article class="flex-responsive-I">Sombra</article>
+          <article class="flex-responsive-I">Reaper</article>
+          <article class="flex-responsive-I">Soldado 76</article>
+          <article class="flex-responsive-I">Ana</article>
+          <article class="flex-responsive-I">Moira</article>
+          <article class="flex-responsive-I">Echo</article>
+          <article class="flex-responsive-I">Sigma</article>
+          <article class="flex-responsive-I">Junker-Queen</article>
+        </section>
+    </main>
+    <footer class="titulares">
+        <h2>sticky footer</h2>
+        <a href="Flexbox-Mresponsive.html">Volver</a>
+    </footer>
+    
+</body>
+</html>

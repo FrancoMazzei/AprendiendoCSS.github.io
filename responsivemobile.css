@@ -1,0 +1,145 @@
+/*html {
+    box-sizing: border-box;
+  }
+  *, 
+  *:before, 
+  *:after {
+    box-sizing: inherit;
+  }*/
+
+body {
+    background-color: #000;
+}
+
+.aenlace{
+    color: #9f5;
+}
+
+* {
+    font-family: monospace;
+    font-weight: 100;
+ }
+
+ .responsive__bottom-ul {
+    display: none;
+ } 
+
+ .nav {
+    background-color: #9f5;
+    
+ } 
+
+.nav__li {
+    display: inline-block;
+    color: #000;
+    padding: 12px;
+}
+
+.nav__li a:hover {
+    color: #888;
+}
+
+.nav__li:hover {
+    color: #888;
+}
+
+.nav__li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav__li i {
+    width: 24px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.nav_responsive_bottom-container {
+    position: absolute;
+    width: 100%;
+    background-color: #5e5;
+    z-index: 100;
+    
+}
+.nav_responsive_bottom {
+    padding: 10px 10px;
+    font-size: 25px;
+    text-align: right;
+    width: 100%;
+    margin-top: -75px;
+}
+
+@media only screen and (max-width: 500px) {
+    .nav_ul {
+        display: none;
+    }
+    .nav {
+        height: 75px;
+        width: 100%;
+        background-color: #5e5;
+    }
+    .responsive__nav-ul {
+        display: block;
+        position: absolute;
+        width: 100%;
+        margin-top: 55px;
+        padding-top: 25px;
+        height: 55px;
+    }
+    
+    .nav_li_container {
+        position: relative;
+        top: -1000px;
+        height: calc(80vh - 55px);
+        background-color: #9f5;
+        transition: all 1s;
+        z-index: 1;
+    }
+
+    .responsive_nav_li {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .responsive__nav-ul a:hover {
+        color: #888;
+    }
+    .responsive__bottom-ul i:hover {
+        color: #888;
+    }
+
+    .responsive_nav_li a {
+        color: #000;
+        text-decoration: none;
+    }
+    .responsive_nav_li i {
+        width: 24px;
+        box-sizing: border-box;
+        text-align: center;
+        width: 30px;
+    }
+
+    .responsive__nav-ul:hover .nav_li_container { 
+        top: -25px;
+
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .responsive__nav-ul {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

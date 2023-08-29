@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprendiendo Grid CSS</title>
+  <link rel="stylesheet" href="Griid.css">
+</head>
+
+<body>
+  <h1 id="top">Aprendiendo Grid CSS</h1>
+  <ul class="menu">
+    <li><a href="#grid-terms">Conceptos básicos</a></li>
+    <li><a href="#display-grid">Grid Display y template</a></li>
+    <li><a href="#grid-explicit">Grid Explicita</a></li>
+    <li><a href="#grid-line-names">Grid con Nombres de Línea</a></li>
+    <li><a href="#grid-areas">Grid con Áreas</a></li>
+    <li><a href="#grid-implicit">Grid Implícita</a></li>
+    <li><a href="#grid-flow">Flujo de la Grid</a></li>
+    <li><a href="#grid-flow-dense">Flujo denso de la grid</a></li>
+    <li><a href="#grid-layer">Grid Items en Capas (superposición)</a></li>
+    <li><a href="#grid-order">Ordenamiento de Grid Items</a></li>
+    <li><a href="#grid-align">Alineamiento de Grid Items</a></li>
+    <li><a href="#grid-align-tracks">Alineamiento de Grid Tracks</a></li>
+    <li><a href="#grid-min-max">Tamaños Máximos y Mínimos de Grid Tracks</a></li>
+    <li><a href="#grid-repeat">Grid con Patrones Repetitivos</a></li>
+    <li><a href="#grid-dynamics">Grids Dinámicas</a></li>
+    <li><a href="#grid-responsive">Responsive sin Media Queries</a></li>
+    <li><a href="#grid-nested">Grids Anidados</a></li>
+    <li><a href="#subgrid">Subgrids</a></li>
+    <li><a href="#ejercicioG">Galery</a></li>
+    <li><a href="#grid_layout.ejercicio">Grid Layout(maquetado) con Líneas</a></li>
+    <li><a href="#grid_layout_areas.ejercicio">Grid Layout con Áreas</a></li>
+    <li><a href="https://jonmircha.com/grid" target="_blank">Más Recursos</a></li>
+  </ul>
+  <article id="grid-terms">
+  <h2>Conceptos Básicos</h2>
+  <a href="#top">🔝</a>
+  <img src="https://jonmircha.com/img/blog/grid-conceptos.png" alt="Conceptos Básicos">
+  </article>
+ 
+  <article id="display-grid">
+  <h2>Display Grid y template</h2>
+  <div class="gridcontainer">
+    <div class="griditem">1</div>
+    <div class="griditem">2</div>
+    <div class="griditem">3</div>
+    <div class="griditem">4</div>
+    <div class="griditem">5</div>
+    <div class="griditem">6</div>
+    <div class="griditem">7</div>
+    <div class="griditem">8</div>
+    <div class="griditem">9</div>
+  </div>
+  <a href="#top">🔝</a>
+</article>
+
+<article>
+  <h2 id="grid-explicit">Grid Explícita / Alineación de espacios</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-explicit">
+    <div class="item">
+      <p>Grid Item1</p>
+    </div>
+    <div class="item">
+      <p>Grid Item2</p>
+    </div>
+    <div class="item">
+      <p>Grid Item3</p>
+    </div>
+    <div class="item">
+      <p>Grid Item4</p>
+    </div>
+    <div class="item">
+      <p>Grid Item5</p>
+    </div>
+    <div class="item">
+      <p>Grid Item6</p>
+    </div>
+    <div class="item">
+      <p>Grid Item7</p>
+    </div>
+    <div class="item">
+      <p>Grid Item8</p>
+    </div>
+    <div class="item">
+      <p>Grid Item9</p>
+    </div>
+    <div class="item">
+      <p>Grid Item10</p>
+    </div>
+    <div class="item">
+      <p>Grid Item11</p>
+    </div>
+    <div class="item">
+      <p>Grid Item12</p>
+    </div>
+    <div class="item">
+      <p>Grid Item13</p>
+    </div>
+    <div class="item">
+      <p>Grid Item14</p>
+    </div>
+    <div class="item">
+      <p>Grid Item15</p>
+    </div>
+    <div class="item">
+      <p>Grid Item16</p>
+    </div>
+    <div class="item">
+      <p>Grid Item17</p>
+    </div>
+    <div class="item">
+      <p>Grid Item18</p>
+    </div>
+    <div class="item">
+      <p>Grid Item19</p>
+    </div>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-line-names">Grid con Nombres de Línea</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-line-names">
+    <div class="item">
+      <p>grid line 1</p>
+    </div>
+    <div class="item">
+      <p>grid line 2</p>
+    </div>
+    <div class="item">
+      <p>grid line 3</p>
+    </div>
+    <div class="item">
+      <p>grid line 4</p>
+    </div>
+    <div class="item">
+      <p>grid line 5</p>
+    </div>
+    <div class="item">
+      <p>grid line 6</p>
+    </div>
+    <div class="item">
+      <p>grid line 7</p>
+    </div>
+    <div class="item">
+      <p>grid line 8</p>
+    </div>
+    <div class="item">
+      <p>grid line 9</p>
+    </div>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-areas">Grid con Áreas</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-areas">
+    <header class="item header">
+      <p>Header</p>
+    </header>
+    <article class="item content">
+      <p>Article - contenido</p>
+    </article>
+    <aside class="item aside">
+      <p>Aside</p>
+    </aside>
+    <footer class="item footer">
+      <p>Footer</p>
+    </footer>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-implicit">Grid Implícita</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-implicit">
+    <div class="item"><p>Grid item1</p></div>
+    <div class="item"><p>Grid item2</p></div>
+    <div class="item"><p>Grid item3</p></div>
+    <div class="item"><p>Grid item4</p></div>
+    <div class="item"><p>Grid item5</p></div>
+    <div class="item"><p>Grid item6</p></div>
+    <div class="item"><p>Grid item7</p></div>
+    <div class="item"><p>Grid item8</p></div>
+    <div class="item"><p>Grid item9</p></div>
+    <div class="item"><p>Grid item10</p></div>
+    <div class="item"><p>Grid item11</p></div>
+    <div class="item"><p>Grid item12</p></div>
+    <div class="item"><p>Grid item13</p></div>
+    <div class="item"><p>Grid item14</p></div>
+    <div class="item"><p>Grid item15</p></div>
+    <div class="item"><p>Grid item16</p></div>
+    <div class="item"><p>Grid item17</p></div>
+    <div class="item"><p>Grid item18</p></div>
+    <div class="item"><p>Grid item19</p></div>
+    <div class="item"><p>Grid item20</p></div>
+  </section>
+  <section class="container grid-implicit">
+    <div class="item"><p>Grid item1</p></div>
+    <div class="item"><p>Grid item2</p></div>
+    <div class="item"><p>Grid item3</p></div>
+    <div class="item"><p>Grid item4</p></div>
+    <div class="item"><p>Grid item5</p></div>
+    <div class="item"><p>Grid item6</p></div>
+    <div class="item"><p>Grid item7</p></div>
+    <div class="item"><p>Grid item8</p></div>
+    <div class="item"><p>Grid item9</p></div>
+    <div class="item"><p>Grid item10</p></div>
+    <div class="item"><p>Grid item11</p></div>
+    <div class="item"><p>Grid item12</p></div>
+    <div class="item"><p>Grid item13</p></div>
+    <div class="item"><p>Grid item14</p></div>
+    <div class="item"><p>Grid item15</p></div>
+    <div class="item"><p>Grid item16</p></div>
+    <div class="item"><p>Grid item17</p></div>
+    <div class="item"><p>Grid item18</p></div>
+    <div class="item"><p>Grid item19</p></div>
+    <div class="item"><p>Grid item20</p></div>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-flow">Flujo de la Grid</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-flow">
+    <div class="item">
+      <p>Grid item 1</p>
+    </div>
+    <div class="item">
+      <p>Grid item 2</p>
+    </div>
+    <div class="item">
+      <p>Grid item 3</p>
+    </div>
+    <div class="item">
+      <p>Grid item 4</p>
+    </div>
+    <div class="item">
+      <p>Grid item 5</p>
+    </div>
+    <div class="item">
+      <p>Grid item 6</p>
+    </div>
+    <div class="item">
+      <p>Grid item 7</p>
+    </div>
+    <div class="item">
+      <p>Grid item 8</p>
+    </div>
+    <div class="item">
+      <p>Grid item 9</p>
+    </div>
+    <div class="item">
+      <p>Grid item 10</p>
+    </div>
+    <div class="item">
+      <p>Grid item 11</p>
+    </div>
+    <div class="item">
+      <p>Grid item 12</p>
+    </div>
+    <div class="item">
+      <p>Grid item 13</p>
+    </div>
+    <div class="item">
+      <p>Grid item 14</p>
+    </div>
+    <div class="item">
+      <p>Grid item 15</p>
+    </div>
+    <div class="item">
+      <p>Grid item 16</p>
+    </div>
+    <div class="item">
+      <p>Grid item 17</p>
+    </div>
+    <div class="item">
+      <p>Grid item 18</p>
+    </div>
+    <div class="item">
+      <p>Grid item 19</p>
+    </div>
+  </section>
+  <h2 id="grid-flow-dense">Flujo denso de la grid</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-flow-dense">
+    <div class="item">
+      <p>Grid item 1</p>
+    </div>
+    <div class="item">
+      <p>Grid item 2</p>
+    </div>
+    <div class="item">
+      <p>Grid item 3</p>
+    </div>
+    <div class="item">
+      <p>Grid item 4</p>
+    </div>
+    <div class="item">
+      <p>Grid item 5</p>
+    </div>
+    <div class="item">
+      <p>Grid item 6</p>
+    </div>
+    <div class="item">
+      <p>Grid item 7</p>
+    </div>
+    <div class="item">
+      <p>Grid item 8</p>
+    </div>
+    <div class="item">
+      <p>Grid item 9</p>
+    </div>
+    <div class="item">
+      <p>Grid item 10</p>
+    </div>
+    <div class="item">
+      <p>Grid item 11</p>
+    </div>
+    <div class="item">
+      <p>Grid item 12</p>
+    </div>
+    <div class="item">
+      <p>Grid item 13</p>
+    </div>
+    <div class="item">
+      <p>Grid item 14</p>
+    </div>
+    <div class="item">
+      <p>Grid item 15</p>
+    </div>
+    <div class="item">
+      <p>Grid item 16</p>
+    </div>
+    <div class="item">
+      <p>Grid item 17</p>
+    </div>
+    <div class="item">
+      <p>Grid item 18</p>
+    </div>
+    <div class="item">
+      <p>Grid item 19</p>
+    </div>
+  </section>
+</article>
+
+<aritcle>
+  <h2 id="grid-layer">Grid Items en Capas (superposición)</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-layers">
+    <div class="item"><p>grid item 1</p></div>
+    <div class="item"><p>grid item 2</p></div>
+    <div class="item"><p>grid item 3</p></div>
+    <div class="item"><p>grid item 4</p></div>
+    <div class="item"><p>grid item 5</p></div>
+  </section>
+</aritcle>
+
+<article>
+  <h2 id="grid-order">Ordenamiento de Grid Items</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-order">
+    <div class="item"><p>grid item 1</p></div>
+    <div class="item"><p>grid item 2</p></div>
+    <div class="item"><p>grid item 3</p></div>
+    <div class="item"><p>grid item 4</p></div>
+    <div class="item"><p>grid item 5</p></div>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-align">Alineamiento de Grid Items</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-align">
+    <div class="item"><p>grid item 1</p></div>
+    <div class="item"><p>grid item 2</p></div>
+    <div class="item"><p>grid item 3</p></div>
+    <div class="item"><p>grid item 4</p></div>
+    <div class="item"><p>grid item 5</p></div>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-align-tracks">Alineamiento de Grid Tracks</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-align-tracks">
+    <div class="item"><p>grid item 1</p></div>
+    <div class="item"><p>grid item 2</p></div>
+    <div class="item"><p>grid item 3</p></div>
+    <div class="item"><p>grid item 4</p></div>
+    <div class="item"><p>grid item 5</p></div>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-min-max">Tamaños Máximos y Mínimos de Grid Tracks</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-min-max">
+    <div class="item"><p>griditem1</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis optio tempora earum?
+       Quisquam minima enim ex sint libero quam nam, officia ut soluta nemo facilis ratione eum, quis quibusdam reprehenderit!</p></div>
+    <div class="item"><p>grid item 2</p></div>
+    <div class="item"><p>grid item 3</p></div>
+    <div class="item"><p>grid item 4</p></div>
+    <div class="item"><p>grid item 5</p></div>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-repeat">Grid con Patrones Repetitivos</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-repeat">
+    <div class="item">
+      <p>Grid Item 1</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 2</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 3</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 4</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 5</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 6</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 7</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 8</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 9</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 10</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 11</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 12</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 13</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 14</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 15</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 16</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 17</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 18</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 19</p>
+    </div>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-dynamics">Grids Dinámicas</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-dynamics">
+    <div class="item"><p>grid item 1</p></div>
+    <div class="item"><p>grid item 2</p></div>
+    <div class="item"><p>grid item 3</p></div>
+    <div class="item"><p>grid item 4</p></div>
+    <div class="item"><p>grid item 5</p></div>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-responsive">Responsive sin Media Queries</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-responsive">
+    <div class="item">
+      <p>Grid Item 1</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 2</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 3</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 4</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 5</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 6</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 7</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 8</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 9</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 10</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 11</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 12</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 13</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 14</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 15</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 16</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 17</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 18</p>
+    </div>
+    <div class="item">
+      <p>Grid Item 19</p>
+    </div>
+  </section>
+</article>
+
+<article>
+  <h2 id="grid-nested">Grids Anidados</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-nested">
+    <div class="item grid-nested">
+      <div class="sub-item">
+        <p>grid sub item anidado 1</p>
+      </div>
+      <div class="sub-item">
+        <p>grid sub item anidado 2</p>
+      </div>
+      <div class="sub-item">
+        <p>grid sub item anidado 3</p>
+      </div>
+      <div class="sub-item">
+        <p>grid sub item anidado 4</p>
+      </div>
+      <div class="sub-item">
+        <p>grid sub item anidado 5</p>
+      </div>
+    </div>
+    <div class="item"><p>grid item 2</p></div>
+    <div class="item"><p>grid item 3</p></div>
+    <div class="item"><p>grid item 4</p></div>
+    <div class="item"><p>grid item 5</p></div>
+  </section>
+</article>
+
+<article>
+  <h2 id="subgrid">Subgrids (no esta soportado en todos los navegadores por el momento)</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid">
+  </section>
+</article>
+<br><br><br><br><br>
+
+
+  <a href="galery.html" target="_blank" id="ejercicioG">Galery</a><br>
+  <a href="grid_layout.html" target="_blank" id="grid_layout.ejercicio">Grid Layout con Líneas</a><br>
+  <a href="grid_layout_areas.html" target="_blank" id="grid_layout_areas.ejercicio">Grid layout con areas</a>
+
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
+    <title>Tarea</title>
+    <style>
+
+  html {
+    box-sizing: border-box;
+  }
+  *, 
+  *:before, 
+  *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    background: #000;
+  }
+  main {
+    min-height: 100vh; /*lo hice asi, porque no me funcionaba lo de flex-grow:1 asi que llegue a esta solución. Funciona igual, porque 
+    ocupara el 100vh dentro del contenedor donde lo hayamos puesto, osea article, y ya si yo pongo algo fuera de este article, 
+    no significa que lo va a tapar, porque ocupara el 100vh dentro de su contenedor. Se que mas adelante podre solucionar esto, ya que 
+    puede generar problemas dependiendo de la pagina, pero para ser mi primer tarea con flexbox, me  parece una buena solución.*/
+  }
+
+  .title1 {
+    background: #000;
+    height: 60px;
+  }
+
+  .menul ul {
+    display: flex;
+    list-style-type: none;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+  }
+  a:hover {
+    color: #0f0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .heroimagegif div {
+  background-color: rgb(0, 0, 0);
+  width: 700px;
+  height: 350px;
+  position: relative;
+  top: 150px;
+  margin: auto;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.key {
+ position: absolute;
+ top: 40px;
+ left: 60px;
+ font-family:'Lobster Two', cursive;;
+ font-size: 1.375rem;
+ color: #fff;
+}
+
+.img-form {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  right: 90px;
+}
+.Universe-form {
+  width: 700px;
+  height: 350px;
+}
+
+.heroimagegif-form {
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  left: 65px;
+}
+
+.heroimagegif-form input {
+  background: #000;
+  color: #fff;
+  border-style: none;
+}
+.heroimagegif-form input::placeholder {
+  color: #aaa;
+}
+.heroimagegif-form input[type="submit"] {
+  width: 95px;
+  position: relative;
+  left: 45px;
+  top: 50px;
+}
+
+.heroimagegif-form textarea {
+  background: #000;
+  color: #fff;
+  resize: none;
+  height: 80px;
+  position: relative;
+  top: 25px;
+  border-color: #fff;
+}
+
+.heroimagegif-form input:focus{
+  background: linear-gradient(to top, transparent, #005);
+}
+.heroimagegif-form textarea:focus {
+  background: linear-gradient(to top, transparent, #005);
+}
+
+.heroimagegif {
+   min-height: 100vh;
+   background-image: url(assets/universe-stars.gif);
+   background-size: cover; 
+}
+  @media  screen and (max-width:1023px){
+    .heroimagegif {
+      background-image: url(assets/universe-stars.gif);
+      background-size: contain; 
+    }
+
+    .header {
+      height: 100px;
+    }
+
+    .menul ul {
+    display: flex;
+    list-style-type: none;
+    flex-flow: column wrap;
+    align-items: flex-start;
+  
+  }
+
+  .heroimagegif div {
+  background-color: rgb(0, 0, 0);
+  width: 400px;
+  height: 500px;
+  position: relative;
+  top: 90px;
+  margin: auto;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.key {
+ position: absolute;
+ top: 40px;
+ left: 60px;
+ font-family:'Lobster Two', cursive;;
+ font-size: 1.375rem;
+ color: #fff;
+}
+
+.img-form {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  right: 165px;
+  top: 100px;
+}
+.Universe-form {
+  width: 400px;
+  height: 500px;
+}
+
+.heroimagegif-form {
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  bottom: 65px;
+  left: 100px;
+}
+
+.heroimagegif-form input[type="submit"] {
+  position: relative;
+  top: 30px;
+}
+}
+
+h2, h3, h4, h5, h6 {
+  padding: 5px;
+  color: #f60;
+}
+
+.img-border {
+  border: thin solid #fff;
+}
+
+article p {
+  color: #0f0;
+}
+@media screen and (min-width:1024px) {
+
+  .container-flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-item {
+    flex: 0 0 60%;
+  }
+
+  .order1 {
+    order: 1;
+  }
+
+  .order2 {
+    order: 2;
+  }
+
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="title1 header">
+            <nav class="menul">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">Buscar</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+    </header>
+    <section class="seccion-1">
+        <main>
+            <article class="heroimagegif">
+              <div>
+                <p class="key">¡La llave a los secretos del universo!</p><br>
+                <img class="img-form" src="assets/pngwing.com.png">
+                <form class="heroimagegif-form">
+                  <input type="text" name="Nombre" placeholder="Pon tu nombre aquí"><br>
+                  <input type="email" placeholder="Pon tu email"><br>
+                  <textarea></textarea><br>
+                  <input type="submit">
+                </form>
+                <img class="Universe-form" src="assets/universe.com (1).png">
+              </div> 
+            </article>
+              <h2>Datazos</h2>
+              <section class="container-flex">
+              <article class="flex-item">
+                <h3>¿Hay mas estrellas que granos de arena en la tierra?</h3>
+                <p>Sip, esa frase de "Hay mas estrellas que granos de arena en la tierra" es 100% real.<br>
+                Se estima que debe haber 180 estrellas por cada grano de arena en la tierra... Pero ojo, es una aproximación no un dato completamente verídico.<br>
+                Con tantas estrellas en el universo y, tan grande que es... creo completamente en la vida en otros planetas.</p>
+              </article>
+              <article>
+                <img class="img-border" src="assets/estrellas.jpg" alt="Un desierto con un cielo estrellado de noche">
+              </article>
+            </section>
+            <section class="container-flex">
+              <article class="flex-item order1">
+                <h3>Planetas... ¿Donde llueven diamantes?</h3>
+                <p>¡Si! existen.<br>
+                La realidad es que los diamantes en el universo no son tan extraños, ni siquiera en nuestro planeta. Es decir, son raros en comparación con 
+                otras piedras y minerales, pero no es que sean escasos. ¡Sin embargo! lo que si son es difícil de conseguir por la forma de producción. Ademas, conseguir
+                un diamante perfecto para el ámbito de la joyería y otros usos es difícil, de ahi su valor.<br>
+                En el universo los diamanten son abundantes, como en dos planetas de nuestro sistema solar: Urano y Neptuno. allí en esos planetas llueven 
+                diamantes literalmente. ¡¡Asombroso!!</p>
+              </article>
+              <article>
+                <img class="img-border" src="assets/Diamante.png" alt="Un planeta al que le cae una lluvia de diamantes">
+              </article>
+            </section>
+            <section class="container-flex">
+              <article class="flex-item order2">
+                <h3>Matusalén</h3>
+                <p>Matusalén o HD140283, pero mejor digámosle Matusalén, así se llama la estrella más antigua conocida del universo. Se calcula que su edad es
+                  de 14.460 millones de años... si, más antigua que el propio universo, ahora acá la pregunta es, ¿o en realidad es más joven o el universo más antiguo?<br>
+                  Hay una nueva teoría, de un astrofísico Rajendra Gupta que dice que el universo tendría 26.700 millones, eso explicaría muchas cosas jaja.</p>
+              </article>
+              <article>
+                <img class="img-border" src="assets/estrellaantigua.jpg" alt="Una estrella, pero esta es la mas antigua del universo conocido">
+              </article>
+            </section>
+            <section class="container-flex">
+              <article class="flex-item">
+                <h3>Galaxias en formas de anillo</h3>
+                <p>Existen galaxias en formas de anillos, se les llama galaxia anular o galaxia de anillo y son raras la verdad. Al ser tan raras o poco conocidas, todavía son estudiadas, hay muchas teorías de como se forma, pero no se sabe al completo. 
+                  En cuanto a lo que poseen en su centro, puede variar. 
+                  Pueden tener un agujero negro supermasivo, una galaxia pequeña u otras estructuras, como un cúmulo de estrellas o materia oscura. </p>
+              </article>
+              <article>
+                <img class="img-border" src="assets/galaxia-anillo.jpg" alt="Una galaxia en forma de anillo">
+              </article>
+            </section> 
+        </main>
+    </section>
+    <footer class="title1">
+    </footer> 
+</body>
+</html>
